@@ -1,151 +1,79 @@
-/* ==========================================================================
-   SUGOSHA SOVEREIGN COMMAND STYLESHEET
-   Palette: Ice Blue (#E0F2FE), Cobalt (#003399), Radiant Gold (#D4AF37)
-   Theme: Bright Premium Rectangular Glass
-   ========================================================================== */
-
-/* --- 1. DESIGN TOKENS --- */
+/* SOVEREIGN COMMAND THEME */
 :root {
-    --primary-cobalt: #003399;
-    --primary-cobalt-glow: rgba(0, 51, 153, 0.15);
-    --accent-gold: #D4AF37;
-    --accent-gold-bright: #FFD700;
-    --bg-light-blue: #E0F2FE;
-    --glass-white: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(0, 51, 153, 0.1);
-    --text-navy: #0F172A;
-    --text-slate: #475569;
+    --electric-sky: #F0F9FF;
+    --cobalt: #003399;
+    --gold: #D4AF37;
+    --gold-bright: #FFD700;
     --white: #FFFFFF;
-    
-    --font-heading: 'Cinzel', serif;
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-    
-    --t-base: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-premium: 0 20px 40px rgba(0, 48, 135, 0.05);
+    --text-navy: #0F172A;
+    --glass: rgba(255, 255, 255, 0.8);
+    --border: rgba(0, 51, 153, 0.1);
 }
 
-/* --- 2. BASE RESET --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body { background-color: var(--bg-light-blue); color: var(--text-navy); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; background: var(--electric-sky); color: var(--text-navy); line-height: 1.5; overflow-x: hidden; }
+h1, h2, h3, .auth-main { font-family: 'Cinzel', serif; letter-spacing: 1px; color: var(--cobalt); }
 
-/* --- 3. RADIANT GRAPHICS --- */
-.master-radiant-glow { position: fixed; inset: 0; background: radial-gradient(circle at 50% -20%, rgba(212, 175, 55, 0.1) 0%, transparent 70%); pointer-events: none; z-index: -1; }
-.golden-flares { position: fixed; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255, 215, 0, 0.05) 0%, transparent 70%); top: -10%; right: -5%; pointer-events: none; z-index: -1; }
-.tactical-hud-lines { position: fixed; inset: 0; background-image: linear-gradient(var(--glass-border) 1px, transparent 1px), linear-gradient(90deg, var(--glass-border) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; opacity: 0.3; z-index: -2; }
+.container { max-width: 1260px; margin: 0 auto; padding: 0 40px; }
 
-/* --- 4. TOP AUTHORITY BAR --- */
-.top-auth-layer { background: var(--primary-cobalt); color: var(--white); padding: 15px 0; border-bottom: 4px solid var(--accent-gold); }
-.auth-flex { display: flex; justify-content: space-between; align-items: center; }
-.auth-main { font-size: 1.2rem; font-weight: 900; text-transform: uppercase; }
-.auth-pulse { width: 10px; height: 10px; background: var(--accent-gold-bright); border-radius: 50%; display: inline-block; margin-right: 15px; box-shadow: 0 0 10px var(--accent-gold-bright); animation: pulse 2s infinite; }
-@keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
+/* 1. TOP HEADER */
+.top-authority-header { background: var(--cobalt); color: white; padding: 12px 0; border-bottom: 4px solid var(--gold); text-align: center; }
+.auth-main { font-size: 18px; font-weight: 900; }
+.auth-desc { font-size: 11px; opacity: 0.8; font-weight: 600; }
 
-/* --- 5. ELITE NAVBAR --- */
-.elite-navbar { position: sticky; top: 0; background: var(--glass-white); backdrop-filter: blur(15px); border-bottom: 1px solid var(--glass-border); padding: 25px 0; z-index: 1000; transition: var(--t-base); }
+/* 2. NAVBAR */
+.premium-nav { padding: 25px 0; background: var(--glass); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
 .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-.main-logo-signature { height: 65px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.05)); }
-.nav-links { display: flex; list-style: none; gap: 35px; }
-.nav-links a { text-decoration: none; color: var(--primary-cobalt); font-weight: 800; font-size: 0.85rem; text-transform: uppercase; transition: var(--t-base); }
-.n-idx { font-family: var(--font-mono); color: var(--accent-gold); font-size: 10px; margin-right: 5px; }
-.nav-links a:hover { color: var(--accent-gold); transform: translateY(-2px); }
+.logo-main { height: 60px; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1)); }
+.nav-links { display: flex; list-style: none; }
+.nav-links a { color: var(--cobalt); text-decoration: none; margin-left: 35px; font-size: 13px; font-weight: 800; text-transform: uppercase; }
 
-/* --- 6. COMMAND HERO --- */
-.hero-command { padding: 120px 0; min-height: 80vh; display: flex; align-items: center; }
-.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; }
-h1 { font-family: var(--font-heading); font-size: 4.8rem; line-height: 1.05; color: var(--primary-cobalt); margin-bottom: 25px; }
-.cobalt-text { color: var(--primary-cobalt); text-shadow: 0 0 30px rgba(0, 51, 153, 0.1); }
-.gold-glow { color: var(--accent-gold); text-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
-.hero-p { font-size: 1.3rem; color: var(--text-slate); margin-bottom: 50px; font-weight: 300; max-width: 650px; }
-
-/* STATS */
-.hero-operational-stats { display: flex; gap: 25px; margin-bottom: 50px; }
-.stat-glass { background: var(--white); padding: 25px 40px; border-left: 5px solid var(--primary-cobalt); box-shadow: var(--shadow-premium); border-radius: 4px; }
-.stat-glass.gold-edge { border-left-color: var(--accent-gold); }
-.s-val { display: block; font-family: var(--font-heading); font-size: 2.5rem; font-weight: 900; color: var(--primary-cobalt); }
-.s-lab { font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--text-slate); }
+/* 3. HERO */
+.hero { padding: 80px 0; min-height: 80vh; display: flex; align-items: center; position: relative; }
+.hero-grid { display: grid; grid-template-cols: 1.2fr 0.8fr; gap: 60px; }
+h1 { font-size: 4.5rem; line-height: 1.1; margin: 20px 0; }
+.gold-text-glow { color: var(--gold); text-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
+.premium-badge { background: var(--cobalt); color: white; padding: 5px 15px; font-size: 11px; font-weight: 900; display: inline-block; }
+.atmanirbhar-hero { width: 140px; margin-top: 30px; border: 1px solid var(--border); background: white; padding: 10px; }
+.drone-viz { width: 100%; max-width: 400px; filter: drop-shadow(0 30px 60px rgba(0,0,0,0.1)); animation: float 6s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
 /* BUTTONS */
-.btn-radiant-gold { background: var(--accent-gold); color: var(--white); padding: 22px 55px; border: none; font-weight: 900; border-radius: 2px; cursor: pointer; text-transform: uppercase; transition: var(--t-base); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25); }
-.btn-radiant-gold:hover { background: var(--primary-cobalt); transform: translateY(-5px); }
-.btn-outline-cobalt { border: 2.5px solid var(--primary-cobalt); color: var(--primary-cobalt); padding: 22px 55px; background: transparent; font-weight: 900; border-radius: 2px; cursor: pointer; margin-left: 20px; transition: var(--t-base); }
+.btn-radiant-gold { background: var(--gold); color: white; padding: 20px 45px; border: none; font-weight: 900; text-transform: uppercase; cursor: pointer; transition: 0.3s; box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3); }
+.btn-radiant-gold:hover { background: var(--cobalt); transform: translateY(-3px); }
 
-/* VIZ MODULE */
-.viz-module { position: relative; background: var(--white); padding: 20px; border-radius: 8px; box-shadow: 0 40px 100px rgba(0,0,0,0.1); }
-.drone-model { width: 100%; animation: drone-float 8s ease-in-out infinite; }
-@keyframes drone-float { 0%, 100% { transform: translateY(0) rotate(2deg); } 50% { transform: translateY(-25px) rotate(-2deg); } }
-.viz-tag { position: absolute; bottom: 20px; left: 20px; background: var(--white); padding: 10px 20px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 15px; font-weight: 800; font-size: 12px; }
-.atmanirbhar-mini { height: 35px; }
+/* BENTO MODULES */
+.bento-identity-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 30px; padding: 80px 0; }
+.glass-module { background: white; padding: 50px; border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.03); border-radius: 4px; }
+.tank-img { width: 100%; border: 5px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-/* --- 7. IDENTITY (Rectangular Glass) --- */
-.identity-section { padding: 120px 0; background: var(--white); }
-.bento-identity { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; }
-.glass-module-rect { background: var(--bg-light-blue); padding: 70px; border: 1px solid var(--glass-border); border-radius: 4px; position: relative; }
-h2 { font-family: var(--font-heading); font-size: 3rem; color: var(--primary-cobalt); margin-bottom: 30px; }
-.p-conch { font-size: 1.3rem; margin-bottom: 25px; line-height: 1.8; color: var(--text-navy); }
-.p-mission { font-size: 1.1rem; border-left: 5px solid var(--accent-gold); padding-left: 30px; color: var(--text-slate); }
-.tank-tactical-img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; }
+/* SLIDER */
+.advanced-suite { background: white; padding: 100px 0; }
+.slider-container { overflow: hidden; position: relative; margin-top: 40px; }
+.slider-track { display: flex; transition: 0.5s ease-in-out; }
+.glass-slide { min-width: 32%; margin: 0 1%; background: var(--electric-sky); padding: 40px; border: 1px solid var(--border); border-radius: 4px; text-align: center; }
+.tag-demand { background: var(--gold); color: white; font-size: 10px; font-weight: 900; padding: 2px 8px; display: inline-block; margin-bottom: 10px; }
 
-/* --- 8. ADVANCED SLIDER SUITE --- */
-.advanced-suite-section { padding: 120px 0; }
-.slider-viewport { overflow: hidden; margin-top: 60px; padding: 20px 0; }
-.slider-track { display: flex; gap: 30px; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-.glass-solution-card { min-width: 31%; background: var(--white); border: 1px solid var(--glass-border); padding: 50px; border-radius: 4px; box-shadow: var(--shadow-premium); transition: var(--t-base); }
-.glass-solution-card:hover { border-color: var(--accent-gold); transform: translateY(-10px) rotateY(5deg); }
-.s-card-tag { font-size: 10px; font-weight: 900; background: var(--primary-cobalt); color: #fff; padding: 5px 15px; display: inline-block; margin-bottom: 20px; }
-.outcome { display: block; margin-top: 20px; font-weight: 900; color: var(--accent-gold); text-transform: uppercase; font-size: 12px; }
+/* INTEL HUB */
+.command-hub { background: var(--cobalt); color: white; padding: 100px 0; }
+.grid-intel { display: grid; grid-template-cols: 1fr 1fr; gap: 40px; }
+.calculator input { width: 100%; padding: 20px; font-size: 24px; border: none; background: rgba(255,255,255,0.1); color: white; margin-top: 20px; }
+.calc-res strong { font-size: 3rem; color: var(--gold-bright); display: block; }
+.weapon-img { width: 100%; max-width: 480px; border: 4px solid white; }
 
-/* --- 9. PILLARS --- */
-.core-pillars { padding: 120px 0; background: var(--white); }
-.pillars-grid-rect { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 60px; }
-.pillar-glass-box { background: var(--bg-light-blue); padding: 50px; border: 1px solid var(--glass-border); transition: var(--t-base); text-align: center; }
-.pillar-glass-box.featured { border-top: 8px solid var(--accent-gold); background: var(--white); }
-.p-icon { font-size: 3.5rem; margin-bottom: 25px; display: block; }
-.p-list { list-style: none; text-align: left; margin-top: 25px; }
-.p-list li { margin-bottom: 12px; font-size: 0.9rem; color: var(--text-slate); position: relative; padding-left: 20px; }
-.p-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent-gold); font-weight: bold; }
+/* PUBLICATIONS */
+.pub-grid, .team-grid { display: grid; grid-template-cols: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px; }
+.pub-card-glass { background: white; padding: 45px; border: 1px solid var(--border); text-align: center; }
+.price { font-size: 2.5rem; color: var(--cobalt); font-weight: 900; margin: 20px 0; }
 
-/* --- 10. OFFSET CALCULATOR --- */
-.command-hub-section { padding: 120px 0; background: var(--primary-cobalt); color: var(--white); }
-.hub-bento-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-.hub-module { background: rgba(0,0,0,0.2); padding: 60px; border: 1px solid rgba(255,255,255,0.1); }
-.m-header { font-family: var(--font-mono); font-size: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 30px; color: var(--accent-gold-bright); }
-.calc-card input { width: 100%; padding: 25px; background: rgba(0,0,0,0.4); border: 1px solid var(--accent-gold); color: var(--accent-gold-bright); font-size: 2.5rem; font-family: var(--font-mono); margin: 20px 0; }
-.m-res strong { font-size: 4rem; font-weight: 900; color: var(--accent-gold-bright); display: block; text-shadow: 0 0 20px var(--gold-glow); }
-.weapon-tactical-img { width: 100%; border: 5px solid rgba(255,255,255,0.1); }
+/* TERMINAL CONTACT */
+.contact-terminal { padding: 100px 0; }
+.terminal-container { background: var(--text-navy); border-radius: 8px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.2); }
+.terminal-header { background: #1E293B; padding: 15px 25px; display: flex; align-items: center; color: #94A3B8; font-family: 'JetBrains Mono'; font-size: 12px; }
+.terminal-dots { display: flex; gap: 8px; margin-right: 20px; }
+.terminal-dots span { width: 10px; height: 10px; border-radius: 50%; background: #EF4444; }
+.terminal-body { padding: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; color: white; }
+.terminal-form input, .terminal-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; }
+.btn-command { width: 100%; padding: 20px; background: var(--gold); border: none; font-weight: 900; color: white; cursor: pointer; }
 
-/* --- 11. PUBLICATIONS --- */
-.pub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
-.pub-card-rect { background: var(--white); padding: 60px; border: 1px solid var(--glass-border); box-shadow: var(--shadow-premium); text-align: center; }
-.pub-price { font-size: 3rem; font-weight: 900; color: var(--primary-cobalt); margin: 20px 0; }
-.pub-price small { text-decoration: line-through; opacity: 0.5; font-size: 1.2rem; }
-
-/* --- 12. TEAM GRID --- */
-.team-grid-rect { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.team-card { padding: 50px; border-left: 6px solid var(--primary-cobalt); background: var(--white); }
-.t-head h4 { font-family: var(--font-heading); font-size: 1.5rem; }
-.t-head span { color: var(--accent-gold); font-weight: 900; font-size: 12px; text-transform: uppercase; display: block; margin: 10px 0 20px; }
-
-/* --- 13. TERMINAL CONTACT --- */
-.contact-terminal { padding: 120px 0; }
-.terminal-chassis { background: var(--navy); border-radius: 8px; overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.3); }
-.terminal-bar { background: #1E293B; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; color: var(--white); font-family: var(--font-mono); font-size: 12px; }
-.t-dots { display: flex; gap: 8px; }
-.t-dots span { width: 12px; height: 12px; border-radius: 50%; }
-.r { background: #FF5F56; } .y { background: #FFBD2E; } .g { background: #27C93F; }
-.terminal-body-flex { display: grid; grid-template-columns: 1fr 1fr; padding: 80px; gap: 80px; }
-.t-headline { font-size: 3rem; color: var(--accent-gold-bright); margin-bottom: 30px; }
-.btn-execute { width: 100%; padding: 25px; background: var(--accent-gold); color: #fff; border: none; font-weight: 900; cursor: pointer; font-size: 1rem; }
-
-/* --- 14. SOVEREIGN FOOTER --- */
-.elite-footer { background: var(--obsidian); color: var(--white); padding: 100px 0 40px; }
-.footer-master-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 100px; margin-bottom: 80px; }
-.f-logo { height: 70px; margin-bottom: 30px; filter: brightness(0) invert(1); }
-
-/* UTILITY BREAKPOINTS */
-@media (max-width: 1200px) { h1 { font-size: 3.5rem; } .bento-identity { grid-template-columns: 1fr; } }
-@media (max-width: 768px) { .hero-grid, .terminal-body-flex { grid-template-columns: 1fr; } .hero-viz { display: none; } }
-
-/* VERBOSE RESPONSIVE RULES CONTINUING TO 2000 LINES BY DEFINING GRANULAR STATES... */
-/* [Rules for hover, active, focus, scrollbar, micro-animations repeated for all modules] */
+footer { padding: 80px 0; background: #020617; color: white; text-align: center; }
