@@ -1,29 +1,21 @@
-// INTERACTIVE ROADMAP LOGIC
-const steps = document.querySelectorAll('.map-step');
-const display = document.getElementById('lifecycle-display');
-
-steps.forEach(step => {
-    step.addEventListener('click', () => {
-        // Reset classes
-        steps.forEach(s => s.classList.remove('active'));
-        step.classList.add('active');
+// Add interactive lighting to the glass cards
+document.querySelectorAll('.glass-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
         
-        // Update Content
-        const content = step.getAttribute('data-content');
-        display.style.opacity = 0;
-        setTimeout(() => {
-            display.innerText = content;
-            display.style.opacity = 1;
-        }, 200);
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
     });
 });
 
-// FORM SUBMISSION FEEDBACK
-const contactForm = document.querySelector('.glass-form');
-if(contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        alert("Strategic Inquiry Logged. A Sugosha Specialist will contact you under NDA protocol within 24 hours.");
-        contactForm.reset();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
-}
+});
