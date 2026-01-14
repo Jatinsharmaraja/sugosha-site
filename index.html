@@ -3,75 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sugosha Advisory | Elite Defense & Aerospace Strategic Command</title>
+    <title>Sugosha Advisory | Elite Defense Strategic Command</title>
     <!-- Premium Font Integration -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;600;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- COMMAND CENTER OVERLAYS -->
-    <div class="tactical-grid"></div>
-    <div class="light-beam"></div>
-
-    <!-- 1. LIVE INTELLIGENCE TICKER -->
-    <div class="intel-ticker">
-        <div class="container ticker-flex">
-            <span class="ticker-tag">LIVE SIGNALS</span>
-            <div class="ticker-scroll">
-                <p>• [POLICY] MoD updates DAP 2020 Offset Multipliers for MSME category • [INTEL] National Defense Unit simulation complete • [STRATEGY] Integrating Indian MSMEs into Global OEM Supply Chains • [REPORT] Advanced Drone deployment protocols released •</p>
+    <!-- 1. ELITE TAGLINE HEADER (AS REQUESTED) -->
+    <div class="top-authority-bar">
+        <div class="container">
+            <div class="authority-text">
+                <strong>Trusted Advisors in Defense Procurement</strong> | Defense consulting, insights and business development
             </div>
+            <div class="authority-sub">Expert guidance across the full defense acquisition and contracting lifecycle.</div>
         </div>
     </div>
 
     <!-- 2. RADIANT NAVIGATION -->
-    <nav class="elite-nav">
+    <nav class="premium-nav">
         <div class="container nav-wrapper">
             <div class="logo-area">
-                <!-- Clean, Simple Logo with Signal Glow -->
                 <img src="logo.png" alt="Sugosha Advisory" class="brand-logo">
             </div>
             <ul class="nav-links">
                 <li><a href="#about">Identity</a></li>
                 <li><a href="#services">Pillars</a></li>
                 <li><a href="#intel">Informatics</a></li>
-                <li><a href="#publications">Hub</a></li>
-                <li><a href="#team">Advisors</a></li>
-                <li class="vault-access"><a href="#">CLIENT VAULT 🔒</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#team">Leadership</a></li>
+                <li class="client-access"><a href="#">CLIENT VAULT 🔒</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- 3. COMMAND HERO -->
     <header class="hero">
-        <div class="hero-graphics">
-            <!-- High-end Aerospace silhouette background -->
-        </div>
+        <div class="hero-light-beams"></div>
         <div class="container hero-grid">
             <div class="hero-text">
                 <span class="hero-badge">GUIDED BY DHARMA • DRIVEN BY STRATEGY</span>
                 <h1>Strategic Leadership <br><span class="electric-blue">In Defense Acquisition</span></h1>
-                <p>Expert guidance across the full defense acquisition and contracting lifecycle. Integrating MSMEs into Global Tier-1 and OEM supply chains with elite intelligence.</p>
+                <p>Ensuring mission success through deep domain expertise. We integrate MSMEs into Global Tier-1 Supply Chains with elite intelligence.</p>
                 <div class="hero-btns">
-                    <button class="btn-radiant" onclick="location.href='#contact'">Book Consultation</button>
-                    <button class="btn-outline" onclick="location.href='#services'">Our Expertise</button>
+                    <button class="btn-radiant" onclick="location.href='#contact'">Request Consultation</button>
+                    <button class="btn-outline" onclick="location.href='#services'">Explore Offerings</button>
                 </div>
             </div>
-            <div class="hero-stats-dash">
-                <div class="glass-module dash-card">
-                    <div class="dash-line"></div>
-                    <div class="stat-item"><span>EXPERIENCE</span> <strong>25+ YRS</strong></div>
-                    <div class="stat-item"><span>DAP SPECIALTY</span> <strong>2020 v4.2</strong></div>
-                    <div class="stat-item"><span>GLOBAL NETWORK</span> <strong>15+ OEMs</strong></div>
+            <div class="hero-viz">
+                <div class="hero-image-box">
+                    <img src="drone.png.png" alt="Aerospace Tech" class="floating-img-drone">
+                    <img src="Atmanirbhar-Bharat-Abhiyan-Symbol.png" alt="Atmanirbhar Bharat" class="atmanirbhar-logo">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- 4. IDENTITY (Conch Story Preserved) -->
+    <!-- 4. IDENTITY (Conch Story - Rectangular Glass) -->
     <section id="about" class="identity">
         <div class="container">
-            <div class="bento-grid">
+            <div class="bento-grid-identity">
                 <div class="glass-module info-card">
                     <span class="label">Strategic Heritage</span>
                     <h2>The Legacy of Sugosha</h2>
@@ -79,53 +70,51 @@
                     <p>We redefine aerospace and defence consulting through deep domain expertise and actionable insights across policy and procurement ecosystems.</p>
                 </div>
                 <div class="visual-card-rect">
-                    <!-- Replace with Fighter Jet or Tank image -->
-                    <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=1000" class="rect-defense-img">
-                    <div class="img-caption">Sovereign Aerospace Intelligence</div>
+                    <img src="tank.png" class="rect-defense-img" alt="Defense Tank">
+                    <div class="img-caption">Precision • Strategy • Command</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. NEW: INTERACTIVE OFFSET CALCULATOR & MULTIPLIERS (The Feature for HNWIs) -->
+    <!-- 5. INTERACTIVE INTEL (Calculator & Multipliers) -->
     <section id="intel" class="informatics">
         <div class="container">
-            <h2 class="section-title center">Strategic Offset Intelligence</h2>
-            <div class="intel-bento">
+            <h2 class="section-title center">Strategic Intelligence Dash</h2>
+            <div class="intel-grid-bento">
                 <!-- Calculator -->
                 <div class="glass-module calc-box">
                     <h3>Strategic Offset Estimator</h3>
                     <div class="calc-form">
                         <label>Total Contract Value (USD Million)</label>
-                        <input type="number" id="contractVal" placeholder="Enter Value" oninput="runOffsetCalc()">
+                        <input type="number" id="contractVal" placeholder="Enter Amount" oninput="runOffsetCalc()">
                         <div class="calc-result">
                             <span>Estimated Offset Obligation (30%)</span>
                             <strong id="offsetOutput">$0.00 M</strong>
                         </div>
                     </div>
                 </div>
-                <!-- Multipliers Informatics -->
+                <!-- Multipliers -->
                 <div class="glass-module multiplier-box">
                     <h3>DAP 2020 Multipliers</h3>
-                    <div class="multiplier-grid">
-                        <div class="m-item"><span>MSME Partners</span> <strong>1.5x</strong></div>
-                        <div class="m-item"><span>Critical Tech</span> <strong>2.0x</strong></div>
+                    <div class="m-grid">
+                        <div class="m-item"><span>MSME Unit</span> <strong>1.5x</strong></div>
+                        <div class="m-item"><span>Transfer Tech</span> <strong>2.0x</strong></div>
                         <div class="m-item"><span>Tier-1 Supply</span> <strong>1.0x</strong></div>
                     </div>
-                    <p class="m-note">*Multiplier logic based on Annexure to Chapter II, DAP 2020.</p>
+                    <p class="m-note">*Multiplier logic based on Chapter II, DAP 2020 Guidelines.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. STRATEGIC PILLARS (The 5 Rectangular Modules) -->
+    <!-- 6. STRATEGIC PILLARS (5 Pillars Preserved) -->
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Our Expertise Pillars</h2>
             <div class="pillars-grid">
-                <!-- Pillar 1 -->
+                <!-- 1 -->
                 <div class="glass-module pillar-card">
-                    <div class="pillar-light"></div>
                     <div class="icon">⚖️</div>
                     <h3>Policy & Regulations</h3>
                     <ul class="p-list">
@@ -134,9 +123,8 @@
                         <li>• Policy guidance on DAP & DPM</li>
                     </ul>
                 </div>
-                <!-- Pillar 2 -->
-                <div class="glass-module pillar-card active-pillar">
-                    <div class="pillar-light"></div>
+                <!-- 2 -->
+                <div class="glass-module pillar-card featured-glow">
                     <div class="icon">🔄</div>
                     <h3>Offsets & Make in India</h3>
                     <ul class="p-list">
@@ -145,9 +133,8 @@
                         <li>• Policy requirements documentation</li>
                     </ul>
                 </div>
-                <!-- Pillar 3 -->
+                <!-- 3 -->
                 <div class="glass-module pillar-card">
-                    <div class="pillar-light"></div>
                     <div class="icon">🎯</div>
                     <h3>Procurements</h3>
                     <ul class="p-list">
@@ -156,9 +143,8 @@
                         <li>• OEM interface strategies</li>
                     </ul>
                 </div>
-                <!-- Pillar 4 -->
+                <!-- 4 -->
                 <div class="glass-module pillar-card">
-                    <div class="pillar-light"></div>
                     <div class="icon">🤝</div>
                     <h3>Strategic Development</h3>
                     <ul class="p-list">
@@ -167,9 +153,8 @@
                         <li>• Investment facilitation</li>
                     </ul>
                 </div>
-                <!-- Pillar 5 -->
+                <!-- 5 -->
                 <div class="glass-module pillar-card">
-                    <div class="pillar-light"></div>
                     <div class="icon">🧠</div>
                     <h3>Knowledge Partner</h3>
                     <ul class="p-list">
@@ -193,8 +178,8 @@
                     <div class="price">₹3500 <small><s>₹5000</s></small></div>
                     <button class="btn-buy">Subscribe</button>
                 </div>
-                <div class="glass-module pub-card gold-glow">
-                    <div class="tag">MOST POPULAR</div>
+                <div class="glass-module pub-card gold-border">
+                    <div class="tag">TOP SELLER</div>
                     <h4>Jump Start</h4>
                     <p>Focused on Startups and Entrepreneurs in Defense.</p>
                     <div class="price">₹3500 <small><s>₹5000</s></small></div>
@@ -210,25 +195,25 @@
         </div>
     </section>
 
-    <!-- 8. THE LEADERSHIP TEAM -->
+    <!-- 8. THE LEADERSHIP TEAM (Bios Preserved) -->
     <section id="team" class="team">
         <div class="container">
-            <h2 class="section-title">Board of Advisors</h2>
+            <h2 class="section-title">Leadership Team</h2>
             <div class="team-grid">
                 <div class="glass-module t-card">
                     <strong>Col P V S Nageshwar Rao</strong>
                     <span>CEO | Artillery Expert</span>
-                    <p>Defense procurement and business development veteran.</p>
+                    <p>Indian Army veteran. Defense procurement and business development expert.</p>
                 </div>
                 <div class="glass-module t-card">
                     <strong>Mrs Shanti Kuber</strong>
-                    <span>MD | Economics Expert</span>
-                    <p>Armed Forces and Finance experience.</p>
+                    <span>MD | Finance & Economics</span>
+                    <p>Armed Forces and Defence Procurements experience.</p>
                 </div>
                 <div class="glass-module t-card">
                     <strong>Narashimha Chari</strong>
-                    <span>Director | Industry Expert</span>
-                    <p>Electronics and Defence Industry development specialist.</p>
+                    <span>Director | Industry Specialist</span>
+                    <p>Electronics and Defence Industry development expert.</p>
                 </div>
                 <div class="glass-module t-card">
                     <strong>Richa Sharma</strong>
@@ -244,7 +229,7 @@
         <div class="container contact-flex">
             <div class="contact-text">
                 <h2>Secure Engagement</h2>
-                <div class="glass-module pkg-box">
+                <div class="pkg-info">
                     <h4>Policy Consultation Package</h4>
                     <ul>
                         <li>✓ Advisory on DAP 2020</li>
@@ -256,9 +241,9 @@
             <form class="glass-module contact-form">
                 <input type="text" placeholder="Full Name" required>
                 <input type="email" placeholder="Corporate Email" required>
-                <textarea placeholder="Specific Strategic Requirements..."></textarea>
-                <button type="submit" class="btn-radiant">Initialize Uplink</button>
-                <p class="secure-tag">🔒 Encrypted Intelligence Channel</p>
+                <textarea placeholder="Describe your strategic requirements..."></textarea>
+                <button type="submit" class="btn-radiant">Book Consultation</button>
+                <p class="secure-tag">🔒 Encrypted Intelligence Uplink</p>
             </form>
         </div>
     </section>
@@ -267,7 +252,7 @@
         <div class="container footer-grid">
             <div class="f-info">
                 <img src="logo.png" class="f-logo">
-                <p>Strategic advisors to the Global Aerospace & Defense Industry.</p>
+                <p>Expert guidance across the full defense acquisition lifecycle.</p>
             </div>
             <div class="f-contact">
                 <p>Email: info@sugosha.com</p>
