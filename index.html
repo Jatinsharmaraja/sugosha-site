@@ -1,297 +1,534 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sugosha Advisory | Elite Defense & Aerospace Strategic Intelligence</title>
-    <!-- Premium Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sugosha Advisory | Sovereign Defense Strategic Command</title>
+    
+    <!-- SEO & METADATA -->
+    <meta name="description" content="Elite Strategic Advisory for Indian Defense Procurement, Offsets, and Aerospace. Guided by Dharma, Driven by Strategy.">
+    <meta name="author" content="Sugosha Advisory">
+    
+    <!-- PREMIUM TYPOGRAPHY -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@100;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- STYLESHEET -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="command-center-ui">
 
-    <!-- LIGHTING OVERLAYS -->
-    <div class="radiant-flare-top"></div>
-    <div class="tactical-grid-overlay"></div>
+    <!-- LAYER 0: PROCEDURAL GRAPHICS -->
+    <div id="master-glow-flare" class="radiant-gold-flare"></div>
+    <div class="tactical-hud-grid"></div>
+    <div class="scanning-beam"></div>
+    <div class="particle-container" id="particles-js"></div>
 
     <!-- 1. SUPREME AUTHORITY HEADER -->
-    <header class="top-authority-header">
-        <div class="container flex-header">
-            <div class="auth-main">Trusted Advisors in Defense Procurement</div>
-            <div class="auth-desc">Defense consulting, insights and business development | Expert guidance across the full acquisition lifecycle.</div>
+    <header class="top-authority-layer">
+        <div class="container-xl">
+            <div class="header-split">
+                <div class="auth-identity">
+                    <span class="pulse-marker"></span>
+                    <h2 class="auth-title">Trusted Advisors in Defense Procurement</h2>
+                </div>
+                <div class="auth-brief">
+                    <p class="auth-desc">Strategic Insights • Business Development • Defense Acquisition Lifecycle</p>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- 2. RADIANT FLOATING NAVIGATION -->
-    <nav class="premium-nav">
-        <div class="container nav-wrapper">
-            <div class="logo-box">
-                <img src="logo.png" alt="Sugosha Advisory" class="logo-main">
+    <!-- 2. RADIANT GLASS NAVIGATION -->
+    <nav class="elite-navigation-bar" id="main-nav">
+        <div class="container-xl">
+            <div class="nav-flex-wrapper">
+                <!-- LOGO STAGE -->
+                <div class="brand-stage" id="logo-trigger">
+                    <div class="logo-backglow"></div>
+                    <img src="logo.png" alt="Sugosha Advisory" class="brand-main-signature">
+                </div>
+
+                <!-- NAVIGATION LINKS -->
+                <div class="menu-orchestrator">
+                    <ul class="elite-nav-links">
+                        <li class="nav-item active"><a href="#identity" class="nav-link"><span class="link-idx">01.</span> Identity</a></li>
+                        <li class="nav-item"><a href="#strategic-suite" class="nav-link"><span class="link-idx">02.</span> Strategic Suite</a></li>
+                        <li class="nav-item"><a href="#core-pillars" class="nav-link"><span class="link-idx">03.</span> Core Pillars</a></li>
+                        <li class="nav-item"><a href="#intel-dashboard" class="nav-link"><span class="link-idx">04.</span> Intelligence</a></li>
+                        <li class="nav-item"><a href="#publications" class="nav-link"><span class="link-idx">05.</span> Publications</a></li>
+                        <li class="nav-item"><a href="#board" class="nav-link"><span class="link-idx">06.</span> Board</a></li>
+                    </ul>
+                </div>
+
+                <!-- ACTION TERMINAL -->
+                <div class="nav-terminal-action">
+                    <a href="#contact-terminal" class="btn-uplink">
+                        <span class="btn-text">SECURE UPLINK</span>
+                        <svg class="uplink-icon" viewBox="0 0 24 24"><path d="M21 2l-18 12 18 6z"/></svg>
+                    </a>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#about">Identity</a></li>
-                <li><a href="#advanced">Strategic Suite</a></li>
-                <li><a href="#pillars">Core Expertise</a></li>
-                <li><a href="#intel">Command Hub</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li class="nav-cta"><a href="#contact">SECURE UPLINK 🔒</a></li>
-            </ul>
         </div>
     </nav>
 
-    <!-- 3. STRATEGIC HERO -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <div class="premium-badge">MISSION CRITICAL ADVISORY</div>
-                <h1>Defending Interests. <br><span class="gold-text-glow">Commanding Strategy.</span></h1>
-                <p>Expert guidance across the full defense acquisition and contracting lifecycle. Integrating MSMEs into Global Tier-1 and OEM supply chains with sovereign elite intelligence.</p>
-                <div class="hero-actions">
-                    <button class="btn-radiant-gold" onclick="location.href='#contact'">Book Strategic Briefing</button>
-                    <div class="hero-brand-viz">
-                        <img src="Atmanirbhar-Bharat-Abhiyan-Symbol.png" alt="Atmanirbhar Bharat" class="atmanirbhar-hero">
+    <!-- 3. STRATEGIC DASHBOARD HERO -->
+    <main class="hero-command-zone" id="home">
+        <div class="container-xl">
+            <div class="hero-master-grid">
+                <!-- LEFT CONTENT -->
+                <div class="hero-intel-content">
+                    <div class="premium-breadcrumb">
+                        <span class="b-line"></span>
+                        <span class="b-text">SOVEREIGN DEFENSE INTELLIGENCE</span>
                     </div>
-                </div>
-            </div>
-            <div class="hero-viz-box">
-                <div class="dash-frame">
-                    <img src="drone.png.png" alt="Aerospace Drone" class="drone-viz">
-                    <div class="dash-data">
-                        <div class="dash-stat"><span>EXPERIENCE</span> <strong>25+ YRS</strong></div>
-                        <div class="dash-stat"><span>DAP VERSION</span> <strong>2020 v4.2</strong></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. IDENTITY (Full verbatim Conch Story) -->
-    <section id="about" class="identity">
-        <div class="container">
-            <div class="bento-identity-grid">
-                <div class="glass-module info-box">
-                    <span class="module-label">Strategic Heritage</span>
-                    <h2>The Legacy of Sugosha</h2>
-                    <p><strong>Sugosha</strong> takes its name from the conch of <strong>Nakula</strong>, a commander of the Pandava forces in the epic Mahabharata—one of the earliest recorded accounts of warfare. Inspired by Sugosha, we are guided by the principles of <strong>Dharma (righteousness and integrity)</strong> in delivering advisory services to government bodies, industry stakeholders—including Foreign OEMs, Indian OEMs, DPSUs, MSMEs—and industry associations.</p>
-                    <p>Sugosha Advisory redefines aerospace and defence consulting through deep domain expertise and actionable insights across policy, regulatory frameworks and procurement ecosystems. We specialize in integrating MSMEs into Tier-1 and OEM supply chains, supported by tailored business intelligence and market-driven insights.</p>
-                </div>
-                <div class="glass-module image-box-tank">
-                    <img src="tank.png" alt="Defense Tank" class="tank-img">
-                    <div class="img-overlay-tag">Sovereign Tactical Edge</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. ADVANCED STRATEGIC SOLUTIONS (Rotating 3-Card Glass Slider - All 10 Services) -->
-    <section id="advanced" class="advanced-suite">
-        <div class="container">
-            <h2 class="section-title center">Advanced Strategic Solutions</h2>
-            <div class="slider-container">
-                <div class="slider-track" id="strategicSlider">
-                    <!-- Card 1 -->
-                    <div class="glass-slide">
-                        <div class="tag-demand">HIGH DEMAND</div>
-                        <h3>Compliance, Audit & Risk</h3>
-                        <p>DAP/DPM audits, pre-bid & post-award risk assessment, offset compliance & MoD audit support. Outcome: Zero-surprise compliance.</p>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="glass-slide">
-                        <h3>Bid Management & Proposals</h3>
-                        <p>End-to-end BMO services, RFP/RFI response drafting (technical + commercial), Win-probability & L1/L2 strategy formulation.</p>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="glass-slide">
-                        <h3>Indigenous Design & DRDO</h3>
-                        <p>Engagement with DRDO labs, Technology absorption, ToT evaluation, and Design ownership strategy (IPR co-development).</p>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="glass-slide">
-                        <h3>Export Controls & ITAR</h3>
-                        <p>Export licensing (India + Foreign), ITAR/EAR advisory for JVs, readiness audits, and Offset credit banking multipliers.</p>
-                    </div>
-                    <!-- Card 5 -->
-                    <div class="glass-slide">
-                        <h3>Supply Chain Development</h3>
-                        <p>Vendor identification & qualification for OEMs, Supply chain localisation strategy, and Tier-2/Tier-3 ecosystem development.</p>
-                    </div>
-                    <!-- Card 6 -->
-                    <div class="glass-slide">
-                        <h3>Digital Procurement Advisory</h3>
-                        <p>GeM defence procurement advisory, digital tender tracking dashboards, and AI-based tender scanning & alerts.</p>
-                    </div>
-                    <!-- Card 7 -->
-                    <div class="glass-slide">
-                        <div class="tag-premium">PREMIUM</div>
-                        <h3>Market Intelligence & Analytics</h3>
-                        <p>Capability gap analysis, Future procurement forecasting (5–10 years), Competitor intelligence & Capex trend analysis.</p>
-                    </div>
-                    <!-- Card 8 -->
-                    <div class="glass-slide">
-                        <h3>Startup & MSME Enablement</h3>
-                        <p>Defence startup incubation, iDEX/TDF proposal mentoring, and Investor pitch decks (defence-ready).</p>
-                    </div>
-                    <!-- Card 9 -->
-                    <div class="glass-slide">
-                        <h3>Training & Certification</h3>
-                        <p>Corporate training on DAP/DPM, certification for professionals, and Policy bootcamps for CXOs & Founders.</p>
-                    </div>
-                    <!-- Card 10 -->
-                    <div class="glass-slide">
-                        <h3>Post-Contract Support</h3>
-                        <p>Contract execution monitoring, Milestone & delivery governance, and Interface with MoD/DPSUs during execution.</p>
-                    </div>
-                </div>
-                <div class="slider-controls">
-                    <button onclick="moveSlide(-1)">←</button>
-                    <button onclick="moveSlide(1)">→</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. CORE PILLARS (Original 5 Pillars) -->
-    <section id="pillars" class="core-pillars">
-        <div class="container">
-            <h2 class="section-title center">Core Expertise Pillars</h2>
-            <div class="pillars-grid">
-                <div class="pillar-card">⚖️ <h3>Policy & Regulations</h3><p>Licence procedures, documentation for Ex/Im, and policy guidance on DAP/DPM.</p></div>
-                <div class="pillar-card active-pillar">🔄 <h3>Offsets & Make in India</h3><p>Offset proposals, iDEX, TDF, and MAKE program roadmap execution.</p></div>
-                <div class="pillar-card">🎯 <h3>Procurements</h3><p>Armed Forces tenders, DPSU interface, and OEM interface strategies.</p></div>
-                <div class="pillar-card">🤝 <h3>Strategic Development</h3><p>Biz Dev with Global OEMs, JV opportunities, and Investment facilitation.</p></div>
-                <div class="pillar-card">🧠 <h3>Knowledge Partner</h3><p>Thought leadership, white papers, and industry chamber collaborations.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. COMMAND HUB (Calculator + Weapon) -->
-    <section id="intel" class="command-hub">
-        <div class="container grid-intel">
-            <div class="glass-module calculator">
-                <h3>Strategic Offset Estimator</h3>
-                <div class="calc-ui">
-                    <label>Contract Value (USD Million)</label>
-                    <input type="number" id="calcVal" placeholder="500" oninput="runOffsetCalc()">
-                    <div class="calc-res">
-                        <span>ESTIMATED OBLIGATION (30%)</span>
-                        <strong id="calcOut">$0.00 M</strong>
-                    </div>
-                </div>
-            </div>
-            <div class="glass-module weapon-display">
-                <img src="Indian_Army_Weapon_.png" alt="Strategic Weapons" class="weapon-img">
-                <div class="multiplier-info">
-                    <h4>DAP Multipliers</h4>
-                    <div class="mult-row"><span>MSME UNIT</span> <strong>1.5x</strong></div>
-                    <div class="mult-row"><span>TECH TRANSFER</span> <strong>2.0x</strong></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. PUBLICATIONS (Pricing Preserved) -->
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title center">Strategic Intelligence Hub</h2>
-            <div class="pub-grid">
-                <div class="pub-card-glass">
-                    <h4>DefInsights</h4>
-                    <p>Policy analysis, Industry news, and Offset happenings.</p>
-                    <div class="price">₹3500 <small><s>₹5000</s></small></div>
-                    <button class="btn-buy">Subscribe</button>
-                </div>
-                <div class="pub-card-glass featured">
-                    <div class="tag-top">TOP SELLER</div>
-                    <h4>Jump Start</h4>
-                    <p>Focused on Startups and Entrepreneurs in Defense.</p>
-                    <div class="price">₹3500 <small><s>₹5000</s></small></div>
-                    <button class="btn-buy">Subscribe</button>
-                </div>
-                <div class="pub-card-glass">
-                    <h4>Market Intelligence</h4>
-                    <p>Financial analysis of listed Defence companies.</p>
-                    <div class="price">₹3500 <small><s>₹5000</s></small></div>
-                    <button class="btn-buy">Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. TEAM (Bios Preserved) -->
-    <section id="team" class="team">
-        <div class="container">
-            <h2 class="section-title center">Leadership Board</h2>
-            <div class="team-grid">
-                <div class="t-box glass">
-                    <strong>Col P V S Nageshwar Rao</strong>
-                    <span>CEO | Artillery Expert</span>
-                    <p>Indian Army veteran with experience in Artillery systems. Defence procurement and business development expert.</p>
-                </div>
-                <div class="t-box glass">
-                    <strong>Mrs Shanti Kuber</strong>
-                    <span>MD | Finance & Economics</span>
-                    <p>Armed Forces and Defence Procurements experience. Finance and Economics expert.</p>
-                </div>
-                <div class="t-box glass">
-                    <strong>Narashimha Chari</strong>
-                    <span>Director | Industry Specialist</span>
-                    <p>Electronics and Defence Industry experience. Business development expert.</p>
-                </div>
-                <div class="t-box glass">
-                    <strong>Richa Sharma</strong>
-                    <span>Analyst | Correspondent</span>
-                    <p>Assistant Editor of Jump Start, DefInsights and Defence Market Intelligence magazines.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 10. MISSION CONTROL CONTACT -->
-    <section id="contact" class="contact-terminal">
-        <div class="container">
-            <div class="terminal-container">
-                <div class="terminal-header">
-                    <div class="terminal-dots"><span></span><span></span><span></span></div>
-                    <span>SECURE STRATEGIC UPLINK</span>
-                </div>
-                <div class="terminal-body">
-                    <div class="terminal-info">
-                        <h2>Initialize Engagement</h2>
-                        <div class="pkg-card">
-                            <h4>Policy Consultation Package</h4>
-                            <p>Perfect for organizations needing strategic guidance and basic media support.</p>
-                            <ul class="pkg-list">
-                                <li>📡 Advisory on DAP 2020 & DPP</li>
-                                <li>📡 RFP Documentation Support</li>
-                                <li>📡 Offset Policy Discharge Analysis</li>
-                            </ul>
+                    <h1 class="hero-title">
+                        Defending Interests. <br>
+                        <span class="gold-gradient-text">Commanding Strategy.</span>
+                    </h1>
+                    <p class="hero-mission-statement">
+                        Expert guidance across the full defense acquisition and contracting lifecycle. 
+                        We integrate MSMEs into Global Tier-1 and OEM supply chains with elite intelligence 
+                        and zero-surprise compliance frameworks.
+                    </p>
+                    
+                    <div class="hero-operational-metrics">
+                        <div class="metric-glass">
+                            <span class="m-val">25<small>+</small></span>
+                            <span class="m-label">Years of Tactical Expertise</span>
+                        </div>
+                        <div class="metric-glass highlight">
+                            <span class="m-val">V4.2</span>
+                            <span class="m-label">DAP 2020 Policy Experts</span>
                         </div>
                     </div>
-                    <form class="terminal-form">
-                        <div class="form-row">
-                            <input type="text" placeholder="Full Name" required>
-                            <input type="email" placeholder="Corporate Email" required>
+
+                    <div class="hero-btn-orchestra">
+                        <button class="btn-gold-master" onclick="location.href='#contact-terminal'">INITIALIZE CONSULTATION</button>
+                        <button class="btn-outline-white" onclick="location.href='#strategic-suite'">ADVANCED SOLUTIONS</button>
+                    </div>
+                </div>
+
+                <!-- RIGHT VIZUALIZATION -->
+                <div class="hero-visualization-layer">
+                    <div class="viz-glass-frame">
+                        <div class="scanning-fx"></div>
+                        <img src="drone.png.png" alt="Aerospace Systems" class="hero-aerospace-viz">
+                        <div class="viz-overlay-tags">
+                            <div class="tag-item"><img src="Atmanirbhar-Bharat-Abhiyan-Symbol.png" class="tag-icon"> ATMANIRBHAR BHARAT</div>
                         </div>
-                        <textarea placeholder="Describe Strategic Requirements..."></textarea>
-                        <button type="submit" class="btn-command">ESTABLISH CONNECTION</button>
-                        <p class="enc-footer">🔒 ENCRYPTION: AES-256 | RESPONSE: < 24H</p>
-                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 4. IDENTITY: THE CONCH STORY (Full Content Preserved) -->
+    <section id="identity" class="section-identity">
+        <div class="container-xl">
+            <div class="bento-layout-identity">
+                <!-- TEXT MODULE -->
+                <div class="bento-module content-pane glass">
+                    <div class="pane-header">
+                        <span class="pane-idx">01</span>
+                        <h2 class="pane-title">Strategic Heritage</h2>
+                    </div>
+                    <div class="pane-body">
+                        <h3 class="identity-headline">The Legacy of Sugosha</h3>
+                        <p class="conch-verbatim">
+                            <strong>Sugosha</strong> takes its name from the conch of <strong>Nakula</strong>, a commander of the Pandava forces in the epic Mahabharata—one of the earliest recorded accounts of warfare. Inspired by Sugosha, we are guided by the principles of <strong>Dharma (righteousness and integrity)</strong> in delivering advisory services to government bodies, industry stakeholders—including Foreign OEMs, Indian OEMs, DPSUs, MSMEs—and industry associations.
+                        </p>
+                        <p class="identity-mission">
+                            Sugosha Advisory redefines aerospace and defence consulting through deep domain expertise and actionable insights across policy, regulatory frameworks and procurement ecosystems. We specialize in integrating MSMEs into Tier-1 and OEM supply chains.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- IMAGE MODULE -->
+                <div class="bento-module visual-pane glass">
+                    <div class="tank-visualization-wrapper">
+                        <div class="lighting-shroud"></div>
+                        <img src="tank.png" alt="Defense Command Tank" class="tank-tactical-img">
+                        <div class="blueprint-overlay"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-flex">
-            <img src="logo.png" class="f-logo">
-            <div class="f-details">
-                <p>Email: info@sugosha.com | Phone: +91 98868 12348</p>
-                <p>HQ: New Delhi, India</p>
+    <!-- 5. ADVANCED STRATEGIC SOLUTIONS (Rotating 3-Card Glass Slider) -->
+    <section id="strategic-suite" class="section-advanced-suite">
+        <div class="container-xl">
+            <div class="section-heading-block center">
+                <h2 class="section-main-title">Advanced Strategic Solutions</h2>
+                <div class="title-accent-gold"></div>
+                <p class="section-sub-brief">Engineered for "Zero-Surprise Compliance" and High-Value Execution.</p>
+            </div>
+
+            <div class="slider-master-wrapper">
+                <div class="slider-viewport" id="suite-viewport">
+                    <div class="slider-track" id="strategic-track">
+                        <!-- 1. Compliance -->
+                        <div class="glass-solution-card">
+                            <div class="card-status-tag">HIGH DEMAND</div>
+                            <div class="card-body">
+                                <h3>Compliance, Audit & Risk</h3>
+                                <p>Companies fear penalties more than delays. We provide procurement audits (DAP/DPM checks), offset compliance audits, and Vendor compliance for MoD/DPSUs.</p>
+                                <span class="card-outcome">Outcome: Zero-surprise compliance.</span>
+                            </div>
+                        </div>
+                        <!-- 2. Bid Mgmt -->
+                        <div class="glass-solution-card featured">
+                            <div class="card-body">
+                                <h3>Bid Management & Proposals</h3>
+                                <p>Policy is knowledge, but execution is power. End-to-end BMO services, RFP/RFI response drafting (Technical + Commercial), and L1/L2 strategy formulation.</p>
+                            </div>
+                        </div>
+                        <!-- 3. Indigenous Design -->
+                        <div class="glass-solution-card">
+                            <div class="card-body">
+                                <h3>Indigenous Design & DRDO</h3>
+                                <p>Moving from Make in India to Design in India. Engagement advisory with DRDO labs, Technology absorption evaluation, and Design ownership strategy (IPR).</p>
+                            </div>
+                        </div>
+                        <!-- 4. Export Controls -->
+                        <div class="glass-solution-card">
+                            <div class="card-body">
+                                <h3>Export Controls & Global Trade</h3>
+                                <p>Export licensing (India + Foreign regimes), ITAR/EAR advisory for JV & OEM tie-ups, and Offset credit banking strategy.</p>
+                            </div>
+                        </div>
+                        <!-- 5. Supply Chain -->
+                        <div class="glass-solution-card">
+                            <div class="card-body">
+                                <h3>Supply Chain & Localisation</h3>
+                                <p>Vendor identification & qualification for OEMs, localisation strategy, MSME capability mapping, and Tier-2/Tier-3 ecosystem development.</p>
+                            </div>
+                        </div>
+                        <!-- 6. Digital -->
+                        <div class="glass-solution-card">
+                            <div class="card-body">
+                                <h3>Digital Procurement & GeM</h3>
+                                <p>GeM defence procurement advisory, digital tender tracking, AI-based tender scanning, and cyber data compliance for vendors.</p>
+                            </div>
+                        </div>
+                        <!-- 7. Analytics -->
+                        <div class="glass-solution-card premium">
+                            <div class="card-status-tag gold">PREMIUM</div>
+                            <div class="card-body">
+                                <h3>Market Intelligence & Analytics</h3>
+                                <p>Capability gap analysis for Tri-services, forecasting (5–10 years), and Competitor intelligence & pricing benchmarks.</p>
+                            </div>
+                        </div>
+                        <!-- 8. Startups -->
+                        <div class="glass-solution-card">
+                            <div class="card-body">
+                                <h3>Startup & MSME Enablement</h3>
+                                <p>Defence startup incubation advisory, iDEX/TDF proposal mentoring, and Investor pitch decks (defence-ready).</p>
+                            </div>
+                        </div>
+                        <!-- 9. Training -->
+                        <div class="glass-solution-card">
+                            <div class="card-body">
+                                <h3>Training & Capacity Building</h3>
+                                <p>Corporate training on DAP/DPM, certification programs, CXO Policy bootcamps, and Industry-Forces interface workshops.</p>
+                            </div>
+                        </div>
+                        <!-- 10. PMO -->
+                        <div class="glass-solution-card">
+                            <div class="card-body">
+                                <h3>Program Management (PMO)</h3>
+                                <p>Contract execution monitoring, milestone governance, Offset execution PMO, and interface with MoD/Services HQ.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-navigation-terminal">
+                    <button class="nav-control prev" onclick="moveSuite(-1)">PREV_CMD</button>
+                    <div class="slide-indicator" id="slide-ind">01 / 08</div>
+                    <button class="nav-control next" onclick="moveSuite(1)">NEXT_CMD</button>
+                </div>
             </div>
         </div>
-        <div class="copyright">&copy; 2024 Sugosha Advisory Services. All Rights Reserved.</div>
+    </section>
+
+    <!-- 6. CORE PILLARS (Original 5 Pillars - Verbatim) -->
+    <section id="core-pillars" class="section-core-pillars">
+        <div class="container-xl">
+            <h2 class="section-main-title white">Core Expertise Pillars</h2>
+            <div class="core-pillar-grid">
+                <!-- Pillar 1 -->
+                <div class="pillar-glass-rect">
+                    <div class="pillar-header">
+                        <span class="p-icon">⚖️</span>
+                        <h3>Policy & Regulations</h3>
+                    </div>
+                    <ul class="p-bullet-list">
+                        <li>Licence procedures and documentation for exports and imports</li>
+                        <li>Industrial Licence procedures, documentation and support.</li>
+                        <li>Policy guidance on DAP, DPM</li>
+                    </ul>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="pillar-glass-rect glow">
+                    <div class="pillar-header">
+                        <span class="p-icon">🔄</span>
+                        <h3>Offsets & Make in India</h3>
+                    </div>
+                    <ul class="p-bullet-list">
+                        <li>Offset Proposal, structure and execution roadmap</li>
+                        <li>iDEX, TDF, MAKE program procedures and guidance</li>
+                        <li>Policy guidance, requirements and documentation</li>
+                    </ul>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="pillar-glass-rect">
+                    <div class="pillar-header">
+                        <span class="p-icon">🎯</span>
+                        <h3>Procurements</h3>
+                    </div>
+                    <ul class="p-bullet-list">
+                        <li>Armed Forces requirements, tenders and procedures</li>
+                        <li>DPSU opportunities procedures and interface</li>
+                        <li>OEM opportunities, procedures and interface</li>
+                    </ul>
+                </div>
+                <!-- Pillar 4 -->
+                <div class="pillar-glass-rect">
+                    <div class="pillar-header">
+                        <span class="p-icon">🤝</span>
+                        <h3>Strategic Development</h3>
+                    </div>
+                    <ul class="p-bullet-list">
+                        <li>Business development with OEMs and FOEMs</li>
+                        <li>Joint Venture opportunities and facilitation</li>
+                        <li>Investment facilitation</li>
+                    </ul>
+                </div>
+                <!-- Pillar 5 -->
+                <div class="pillar-glass-rect">
+                    <div class="pillar-header">
+                        <span class="p-icon">🧠</span>
+                        <h3>Knowledge Partner</h3>
+                    </div>
+                    <ul class="p-bullet-list">
+                        <li>Industry Chamber collaborations</li>
+                        <li>Thought leadership through white papers</li>
+                        <li>Seminars and conferences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. INTELLIGENCE DASHBOARD (Calculator + Image) -->
+    <section id="intel-dashboard" class="section-intel-dashboard">
+        <div class="container-xl">
+            <div class="dashboard-split-grid">
+                <!-- CALCULATOR MODULE -->
+                <div class="glass-card-terminal offset-calculator">
+                    <div class="terminal-top">
+                        <span class="t-title">STRATEGIC OFFSET ESTIMATOR</span>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="input-orchestra">
+                            <label>Estimated Total Contract Value (USD Million)</label>
+                            <input type="number" id="contract-val" placeholder="ENTER NUMERIC VALUE" oninput="runOffsetEngine()">
+                        </div>
+                        <div class="output-visualizer">
+                            <span class="res-label">PROJECTED OFFSET OBLIGATION (30%)</span>
+                            <div class="res-value" id="offset-result">$ 0000.00 M</div>
+                        </div>
+                        <div class="multiplier-info-table">
+                            <div class="m-row"><span>MSME Partners</span> <strong class="gold">1.5x Multiplier</strong></div>
+                            <div class="m-row"><span>Transfer of Critical Tech</span> <strong class="gold">2.0x Multiplier</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMAGE MODULE -->
+                <div class="weaponry-visualizer glass-card">
+                    <img src="Indian_Army_Weapon_.png" alt="Indian Army Weapon Systems" class="army-weapon-img">
+                    <div class="viz-overlay">
+                        <h4>Atmanirbhar Precision</h4>
+                        <p>Modernizing the Force through Indigenous Excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. PUBLICATIONS HUB (Pricing 100% Preserved) -->
+    <section id="publications" class="section-publications">
+        <div class="container-xl">
+            <h2 class="section-main-title center">Strategic Intelligence Hub</h2>
+            <div class="pub-grid-container">
+                <!-- 1 -->
+                <div class="publication-glass-card">
+                    <h4 class="pub-name">DefInsights</h4>
+                    <p class="pub-desc">Policy analysis, Industry news, Procurements update, Offsets happenings.</p>
+                    <div class="price-tier">
+                        <span class="price-tag">₹3500</span>
+                        <span class="price-mrp">₹5000</span>
+                    </div>
+                    <button class="btn-pub-action">SUBSCRIBE</button>
+                </div>
+                <!-- 2 -->
+                <div class="publication-glass-card featured">
+                    <div class="tag-featured">STARTUP FOCUS</div>
+                    <h4 class="pub-name">Jump Start</h4>
+                    <p class="pub-desc">Focused on the startups and entrepreneurs in the Defence ecosystem.</p>
+                    <div class="price-tier">
+                        <span class="price-tag">₹3500</span>
+                        <span class="price-mrp">₹5000</span>
+                    </div>
+                    <button class="btn-pub-action gold">SUBSCRIBE</button>
+                </div>
+                <!-- 3 -->
+                <div class="publication-glass-card">
+                    <h4 class="pub-name">Defence Market Intelligence</h4>
+                    <p class="pub-desc">Focused on the listed companies in Defence and their financial analysis.</p>
+                    <div class="price-tier">
+                        <span class="price-tag">₹3500</span>
+                        <span class="price-mrp">₹5000</span>
+                    </div>
+                    <button class="btn-pub-action">SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. BOARD OF ADVISORS (Bios Verbatim) -->
+    <section id="board" class="section-leadership">
+        <div class="container-xl">
+            <h2 class="section-main-title">Leadership Board</h2>
+            <div class="team-grid-master">
+                <!-- Member 1 -->
+                <div class="team-card-premium glass">
+                    <div class="member-header">
+                        <h4 class="member-name">Col P V S Nageshwar Rao</h4>
+                        <span class="member-role">Chief Executive Officer</span>
+                    </div>
+                    <p class="member-bio">Indian Army veteran with experience in Artillery systems. Defence procurement and business development expert.</p>
+                </div>
+                <!-- Member 2 -->
+                <div class="team-card-premium glass">
+                    <div class="member-header">
+                        <h4 class="member-name">Mrs Shanti Kuber</h4>
+                        <span class="member-role">Managing Director</span>
+                    </div>
+                    <p class="member-bio">Armed Forces and Defence Procurements experience. Finance and Economics expert.</p>
+                </div>
+                <!-- Member 3 -->
+                <div class="team-card-premium glass">
+                    <div class="member-header">
+                        <h4 class="member-name">Narashimha Chari</h4>
+                        <span class="member-role">Director</span>
+                    </div>
+                    <p class="member-bio">Electronics and Defence Industry experience. Defence procurement and business development expert.</p>
+                </div>
+                <!-- Member 4 -->
+                <div class="team-card-premium glass">
+                    <div class="member-header">
+                        <h4 class="member-name">Richa Sharma</h4>
+                        <span class="member-role">Assistant Editor & Analyst</span>
+                    </div>
+                    <p class="member-bio">Defence Correspondent and Analyst. Assistant Editor of Jump Start and DefInsights magazines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. MISSION CONTROL CONTACT TERMINAL -->
+    <section id="contact-terminal" class="section-contact-terminal">
+        <div class="container-xl">
+            <div class="terminal-chassis">
+                <!-- TOP HEADER -->
+                <div class="terminal-bar">
+                    <div class="terminal-controls">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="terminal-id">SECURE_ADVISORY_UPLINK_ENCRYPTED</div>
+                </div>
+
+                <!-- BODY -->
+                <div class="terminal-main-grid">
+                    <div class="terminal-info-pane">
+                        <span class="t-badge">INITIALIZE ENGAGEMENT</span>
+                        <h2 class="t-headline">Policy Consultation Package</h2>
+                        <p class="t-description">Perfect for organizations needing strategic guidance and basic media support with comprehensive analysis.</p>
+                        <ul class="t-checklist">
+                            <li>📡 Policy advisory on DAP 2020</li>
+                            <li>📡 DPM & Revenue Procurement Procedure</li>
+                            <li>📡 Offset Policy & Discharge Analysis</li>
+                            <li>📡 Tender Process & RFP Documentation</li>
+                        </ul>
+                        <div class="encryption-visual">
+                            <span class="enc-tag">AES-256 BIT</span>
+                            <div class="signal-bars"><span></span><span></span><span></span><span></span></div>
+                        </div>
+                    </div>
+
+                    <div class="terminal-form-pane">
+                        <form id="mission-form" class="cmd-form">
+                            <div class="input-grid">
+                                <div class="cmd-input-group">
+                                    <label>IDENTITY: FULL NAME</label>
+                                    <input type="text" placeholder="NAME_ENTRY" required>
+                                </div>
+                                <div class="cmd-input-group">
+                                    <label>UPLINK: CORPORATE EMAIL</label>
+                                    <input type="email" placeholder="EMAIL_SOCKET" required>
+                                </div>
+                            </div>
+                            <div class="cmd-input-group">
+                                <label>PLAN_SELECTOR</label>
+                                <select>
+                                    <option>POLICY_CONSULTATION</option>
+                                    <option>REGULATORY_INTEL</option>
+                                    <option>OFFSET_ENGINEERING</option>
+                                </select>
+                            </div>
+                            <div class="cmd-input-group">
+                                <label>STRATEGIC_REQUIREMENTS</label>
+                                <textarea placeholder="ENTER_DETAILS..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-command-execute">ESTABLISH CONNECTION</button>
+                            <p class="t-footer">SIGNAL_RESPONSE_TIME: < 24 HOURS</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. FOOTER -->
+    <footer class="sovereign-footer">
+        <div class="container-xl">
+            <div class="footer-master-grid">
+                <div class="f-brand-col">
+                    <img src="logo.png" alt="Sugosha" class="footer-logo">
+                    <p>Strategic advisors across the full defense acquisition and contracting lifecycle.</p>
+                </div>
+                <div class="f-contact-col">
+                    <h5 class="f-title">CONTACT_POINTS</h5>
+                    <p>📧 info@sugosha.com</p>
+                    <p>📞 +91 98868 12348</p>
+                    <p>📍 HQ: New Delhi, India</p>
+                </div>
+            </div>
+            <div class="footer-legal-strip">
+                <p>&copy; 2024 Sugosha Advisory Services. All Rights Reserved. | <a href="#">PRIVACY_PROTOCOL</a></p>
+            </div>
+        </div>
     </footer>
 
+    <!-- EXTERNAL JS -->
     <script src="script.js"></script>
 </body>
 </html>
