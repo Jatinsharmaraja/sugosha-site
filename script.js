@@ -1,30 +1,22 @@
-// CUSTOM CURSOR LOGIC
-const cursor = document.querySelector('.custom-cursor');
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
+// INTERACTIVE PROCUREMENT MAP LOGIC
+const mapNodes = document.querySelectorAll('.map-node');
+const display = document.getElementById('map-display');
 
-// 3D LOGO TILT EFFECT
-const logoStage = document.getElementById('logoStage');
-document.addEventListener('mousemove', (e) => {
-    let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-    let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-    logoStage.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+mapNodes.forEach(node => {
+    node.addEventListener('click', () => {
+        // Reset active state
+        mapNodes.forEach(n => n.classList.remove('active'));
+        node.classList.add('active');
+        
+        // Change text
+        const info = node.getAttribute('data-info');
+        display.style.opacity = 0;
+        setTimeout(() => {
+            display.innerText = info;
+            display.style.opacity = 1;
+        }, 200);
+    });
 });
-
-// OFFSET CALCULATOR LOGIC
-function calculateOffset() {
-    const val = document.getElementById('projectValue').value;
-    const result = document.getElementById('offsetResult');
-    if(val > 0) {
-        const offset = val * 0.3; // Standard 30% obligation
-        result.innerText = `$${offset.toFixed(2)} M`;
-        result.style.color = "#D4AF37";
-    } else {
-        result.innerText = "$0.00 M";
-    }
-}
 
 // SMOOTH SCROLLING
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -36,17 +28,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// FORM SUBMISSION FEEDBACK
-const form = document.querySelector('.elite-form');
-if(form) {
-    form.addEventListener('submit', (e) => {
+// SECURE FORM FEEDBACK
+const contactForm = document.querySelector('.contact-form');
+if(contactForm) {
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = e.target.querySelector('button');
         btn.innerText = "TRANSMITTING SECURELY...";
         setTimeout(() => {
-            alert("UPLINK SUCCESSFUL: Your strategic inquiry has been received. Our leadership board will respond within 24 hours.");
-            btn.innerText = "SUBMIT SECURE INQUIRY";
-            form.reset();
+            alert("UPLINK ESTABLISHED: Your strategic inquiry has been received. Our leadership will respond via secure channels within 24 hours.");
+            btn.innerText = "SUBMIT SECURE REQUEST";
+            contactForm.reset();
         }, 1500);
     });
 }
