@@ -1,30 +1,26 @@
-// INTERACTIVE ROADMAP LOGIC
-const roadBoxes = document.querySelectorAll('.road-box');
-const display = document.getElementById('roadmap-display');
-
-roadBoxes.forEach(box => {
-    box.addEventListener('click', () => {
-        // Remove active class from all
-        roadBoxes.forEach(b => b.classList.remove('active'));
-        // Add to clicked
-        box.classList.add('active');
-        
-        // Update the display text
-        const info = box.getAttribute('data-info');
-        display.style.opacity = 0;
-        setTimeout(() => {
-            display.innerText = info;
-            display.style.opacity = 1;
-        }, 200);
-    });
+document.addEventListener('mousemove', (e) => {
+    const radar = document.querySelector('.radar-bg');
+    if(radar) {
+        const x = (window.innerWidth - e.pageX * 2) / 100;
+        const y = (window.innerHeight - e.pageY * 2) / 100;
+        radar.style.transform = `translate(${x}px, ${y}px) translateY(-50%)`;
+    }
 });
 
-// FORM FEEDBACK
-const contactForm = document.querySelector('.glass-form');
-if(contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert("Encrypted Inquiry Sent. Our Strategic Lead will contact you within 24 hours.");
-        contactForm.reset();
+// Intersection Observer for Orbs falling into place
+const observerOptions = { threshold: 0.2 };
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
     });
-}
+}, observerOptions);
+
+document.querySelectorAll('.service-orb-item').forEach(orb => {
+    orb.style.opacity = "0";
+    orb.style.transform = "translateY(50px)";
+    orb.style.transition = "all 0.8s ease-out";
+    observer.observe(orb);
+});
