@@ -3,7 +3,7 @@ function runOffsetCalc() {
     const input = document.getElementById('contractVal').value;
     const output = document.getElementById('offsetOutput');
     if (input > 0) {
-        const result = input * 0.30; // 30% Obligation
+        const result = input * 0.30; // 30% Obligation logic
         output.innerText = `$${result.toFixed(2)} M`;
         output.style.color = "#FFD700"; // Glow Gold
     } else {
@@ -21,16 +21,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// FORM SUBMISSION FEEDBACK
+// FORM ENCRYPTION FEEDBACK
 const contactForm = document.querySelector('.contact-form');
 if(contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = e.target.querySelector('button');
-        btn.innerText = "UPLINKING SECURELY...";
+        btn.innerText = "TRANSMITTING SECURELY...";
         setTimeout(() => {
-            alert("SECURE TRANSMISSION SUCCESSFUL: Your strategic briefing request has been received. Our leadership board will respond within 24 hours.");
-            btn.innerText = "INITIALIZE UPLINK";
+            alert("UPLINK SUCCESSFUL: Your strategic inquiry has been received. Our leadership board will respond within 24 hours.");
+            btn.innerText = "BOOK CONSULTATION";
             contactForm.reset();
         }, 1500);
     });
