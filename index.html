@@ -3,169 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sugosha Advisory | Defense & Aerospace Strategic Consulting</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sugosha Advisory | Elite Defense Strategic Consulting</title>
     <!-- Premium Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. LIVE STRATEGIC TICKER -->
-    <div class="top-ticker">
-        <div class="ticker-content">
-            <span>• LATEST: National Defense Unit conducts field simulation exercises</span>
-            <span>• UPDATE: Advanced drone systems deployed for tactical reconnaissance</span>
-            <span>• POLICY: New MoD amendments to DAP 2020 Offsets released</span>
-            <span>• NEWS: Coastal surveillance operations strengthened with radar systems</span>
+    <!-- LIVE INTEL TICKER -->
+    <div class="intel-ticker">
+        <div class="ticker-wrap">
+            <div class="ticker-item">LATEST: National Defense Unit field simulation complete.</div>
+            <div class="ticker-item">UPDATE: Advanced drone systems deployed for tactical reconnaissance.</div>
+            <div class="ticker-item">POLICY: New MoD amendments to DAP 2020 Offsets released.</div>
+            <div class="ticker-item">STRATEGY: Integrating Indian MSMEs into Global OEM Supply Chains.</div>
         </div>
     </div>
 
-    <!-- 2. NAVIGATION -->
-    <nav class="navbar">
+    <!-- NAVIGATION -->
+    <nav class="glass-nav">
         <div class="container nav-flex">
-            <div class="logo-area">
-                <img src="logo.png" alt="Sugosha Advisory" class="main-logo">
+            <div class="logo-box">
+                <!-- Keep your logo.png here -->
+                <div class="logo-placeholder">SUGOSHA</div>
             </div>
             <ul class="nav-links">
                 <li><a href="#about">Identity</a></li>
-                <li><a href="#services">Expertise</a></li>
-                <li><a href="#lifecycle">DAP Lifecycle</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#navigator">DAP Navigator</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li class="consult-btn"><a href="#contact">Consultation</a></li>
+                <li class="vault-btn"><a href="#">CLIENT VAULT 🔒</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- 3. HERO SECTION -->
+    <!-- HERO SECTION -->
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <span class="hero-eyebrow">Guided by Dharma, Driven by Intelligence</span>
-            <h1>Trusted Advisors in <br><span class="highlight">Defense Procurement</span></h1>
+            <span class="hero-eyebrow">Trusted Advisors in Defense Procurement</span>
+            <h1>Strategic Intelligence <br><span class="gold-text">Military Advisory</span></h1>
             <p>Expert guidance across the full defense acquisition and contracting lifecycle. Integrating MSMEs into Global Tier-1 and OEM supply chains.</p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn-primary">Book Consultation</a>
-                <a href="#services" class="btn-secondary">Explore Services</a>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-gold">Book Consultation</a>
+                <a href="#services" class="btn-outline">Explore Pillars</a>
             </div>
         </div>
     </header>
 
-    <!-- 4. OUR IDENTITY (Nakula's Conch Story) -->
-    <section id="about" class="identity">
-        <div class="container identity-grid">
+    <!-- IDENTITY SECTION -->
+    <section id="about" class="identity-section">
+        <div class="container grid-2">
             <div class="identity-text">
-                <h2 class="section-title">Strategic Military Advisory</h2>
-                <p>Sugosha takes its name from the conch of <strong>Nakula</strong>, a commander of the Pandava forces. Inspired by Sugosha, we are guided by the principles of <strong>Dharma</strong> (Integrity) in delivering advisory services to Foreign OEMs, Indian DPSUs, and MSMEs.</p>
-                <p class="mt-4">We redefine aerospace and defence consulting through deep domain expertise and actionable insights across policy and procurement ecosystems.</p>
+                <span class="label">Our Identity</span>
+                <h2>Guided by Dharma, <br>Driven by Strategy</h2>
+                <p><strong>Sugosha</strong> takes its name from the conch of <strong>Nakula</strong>, a commander of the Pandava forces. Inspired by Sugosha, we are guided by the principles of <strong>Dharma</strong> (Righteousness and Integrity).</p>
+                <p>We redefine aerospace and defence consulting through deep domain expertise and actionable insights across policy, regulatory frameworks and procurement ecosystems.</p>
             </div>
-            <div class="identity-card">
-                <img src="logo.png" alt="Sugosha Signature" class="card-logo">
-                <blockquote>"Integrating MSMEs into Tier-1 supply chains with tailored market intelligence."</blockquote>
+            <div class="identity-visual">
+                <div class="glass-card">
+                    <img src="https://images.unsplash.com/photo-1579338559194-a162d19bf842?q=80&w=600" alt="Military" class="img-round">
+                    <p class="quote">"Integrating MSMEs into Tier-1 and OEM supply chains with tailored business intelligence."</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. INTERACTIVE DAP LIFECYCLE (New Feature) -->
-    <section id="lifecycle" class="lifecycle">
+    <!-- INTERACTIVE DAP NAVIGATOR (New Feature) -->
+    <section id="navigator" class="navigator-section">
         <div class="container">
-            <h2 class="section-title center">Interactive Procurement Lifecycle</h2>
-            <p class="center-text">Click a stage to see the Sugosha Strategic Edge</p>
-            <div class="timeline">
-                <div class="step" data-info="RFI: Strategic market exploration and identifying key vendors for MoD.">1. RFI</div>
-                <div class="step" data-info="AoN: Acceptance of Necessity - the core approval stage for any project.">2. AoN</div>
-                <div class="step" data-info="RFP: Formal solicitation including Technical & Offset offers.">3. RFP</div>
-                <div class="step" data-info="TEC: Technical Evaluation Committee review & Field Trials.">4. TEC/FET</div>
-                <div class="step" data-info="CNC: Contract Negotiation Committee - Finalizing the deal.">5. CNC</div>
+            <h2 class="section-title">Interactive DAP Navigator</h2>
+            <p class="section-subtitle">Navigate the MoD Acquisition Roadmap</p>
+            <div class="lifecycle-map">
+                <div class="node active" data-info="RFI: Request for Information - Strategic market exploration and vendor identifying.">1. RFI</div>
+                <div class="node" data-info="AoN: Acceptance of Necessity - The core project approval stage from MoD.">2. AoN</div>
+                <div class="node" data-info="RFP: Formal solicitation - Technical and Offset proposal submissions.">3. RFP</div>
+                <div class="node" data-info="FET/CNC: Field Trials and Contract Negotiation Committee.">4. CNC</div>
+                <div class="node" data-info="AWARD: Official Contract Signing and Offset Execution Management.">5. AWARD</div>
             </div>
-            <div id="lifecycle-detail" class="detail-box">Select a stage above to analyze the process.</div>
+            <div id="navigator-display" class="info-panel">
+                Click a stage above to analyze Sugosha's Strategic Edge.
+            </div>
         </div>
     </section>
 
-    <!-- 6. SERVICES -->
-    <section id="services" class="services">
+    <!-- SERVICES PILLARS -->
+    <section id="services" class="services-section">
         <div class="container">
-            <h2 class="section-title center">Expertise Pillars</h2>
+            <h2 class="section-title">Strategic Expertise Pillars</h2>
             <div class="service-grid">
-                <div class="s-card"><h3>Policy & Regs</h3><p>Licence procedures, Industrial documentation, and DAP/DPM guidance.</p></div>
-                <div class="s-card active"><h3>Offsets & Make in India</h3><p>Proposal structure, iDEX/TDF guidance, and execution roadmaps.</p></div>
-                <div class="s-card"><h3>Procurements</h3><p>Armed Forces requirements, tenders, and DPSU interface.</p></div>
-                <div class="s-card"><h3>Strategic Dev</h3><p>JV opportunities, Investment facilitation, and Global OEM B-Dev.</p></div>
-                <div class="s-card"><h3>Knowledge Partner</h3><p>Thought leadership, White papers, and Industry collaborations.</p></div>
+                <div class="service-card">
+                    <div class="s-icon">⚖️</div>
+                    <h3>Policy & Regulations</h3>
+                    <p>Guidance on DAP, DPM, and Licence procedures for Exports/Imports.</p>
+                </div>
+                <div class="service-card">
+                    <div class="s-icon">🎯</div>
+                    <h3>Procurements</h3>
+                    <p>Armed Forces requirements, tenders, and procedures for DPSU interface.</p>
+                </div>
+                <div class="service-card active">
+                    <div class="s-icon">🔄</div>
+                    <h3>Offsets & Make in India</h3>
+                    <p>Proposal structure, iDEX, TDF, and MAKE program execution roadmaps.</p>
+                </div>
+                <div class="service-card">
+                    <div class="s-icon">🤝</div>
+                    <h3>Strategic Development</h3>
+                    <p>Joint Venture opportunities and Global OEM business development.</p>
+                </div>
+                <div class="service-card">
+                    <div class="s-icon">🧠</div>
+                    <h3>Knowledge Partner</h3>
+                    <p>Thought leadership through white papers and industry collaborations.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. PUBLICATIONS -->
-    <section id="publications" class="pubs">
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="pubs-section">
         <div class="container">
-            <h2 class="section-title center">Strategic Intelligence</h2>
+            <h2 class="section-title">Strategic Intelligence</h2>
             <div class="pub-grid">
-                <div class="pub-item">
-                    <h4>DefInsights</h4>
-                    <p>Policy analysis, Industry news, and Offset happenings.</p>
-                    <div class="price">₹3,500 <small><s>₹5,000</s></small></div>
+                <div class="pub-card">
+                    <div class="pub-tag">Popular</div>
+                    <h3>DefInsights</h3>
+                    <p>Policy analysis, Industry news, and Offset updates.</p>
+                    <div class="price">₹3,500 <span class="old">₹5,000</span></div>
+                    <button class="btn-buy">Digital Access</button>
                 </div>
-                <div class="pub-item featured">
-                    <h4>Market Intelligence</h4>
+                <div class="pub-card featured">
+                    <div class="pub-tag">Featured</div>
+                    <h3>Market Intelligence</h3>
                     <p>Financial analysis of listed Defense companies.</p>
-                    <div class="price">₹3,500 <small><s>₹5,000</s></small></div>
+                    <div class="price">₹3,500 <span class="old">₹5,000</span></div>
+                    <button class="btn-buy">Digital Access</button>
                 </div>
-                <div class="pub-item">
-                    <h4>Jump Start</h4>
-                    <p>Focused on Startups and Entrepreneurs in Defense.</p>
-                    <div class="price">₹3,500 <small><s>₹5,000</s></small></div>
+                <div class="pub-card">
+                    <div class="pub-tag">New</div>
+                    <h3>Jump Start</h3>
+                    <p>Focused on Defense Startups & Entrepreneurs.</p>
+                    <div class="price">₹3,500 <span class="old">₹5,000</span></div>
+                    <button class="btn-buy">Digital Access</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 8. TEAM -->
-    <section class="team">
+    <!-- TEAM -->
+    <section class="team-section">
         <div class="container">
-            <h2 class="section-title center">Our Leadership</h2>
+            <h2 class="section-title">The Board of Advisors</h2>
             <div class="team-grid">
-                <div class="t-member"><strong>Col P V S Nageshwar Rao</strong><br>CEO</div>
-                <div class="t-member"><strong>Mrs Shanti Kuber</strong><br>Managing Director</div>
-                <div class="t-member"><strong>Narashimha Chari</strong><br>Director</div>
-                <div class="t-member"><strong>Richa Sharma</strong><br>Defence Analyst</div>
+                <div class="team-card">
+                    <h4>Col P V S Nageshwar Rao</h4>
+                    <span>CEO | Artillery Expert</span>
+                </div>
+                <div class="team-card">
+                    <h4>Mrs Shanti Kuber</h4>
+                    <span>Managing Director | Finance</span>
+                </div>
+                <div class="team-card">
+                    <h4>Narashimha Chari</h4>
+                    <span>Director | Business Development</span>
+                </div>
+                <div class="team-card">
+                    <h4>Richa Sharma</h4>
+                    <span>Defence Analyst</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 9. CONTACT -->
-    <section id="contact" class="contact">
-        <div class="container contact-box">
-            <h2>Secure Consultation</h2>
-            <form id="contactForm">
-                <div class="form-row">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                </div>
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-flex">
+            <div class="contact-info">
+                <h2>Secure Consultation</h2>
+                <p>Plan: Policy Consultation Package</p>
+                <ul class="form-bullets">
+                    <li>✓ DAP 2020 Strategic Guidance</li>
+                    <li>✓ Offset Policy Discharge Analysis</li>
+                    <li>✓ RFP Documentation Support</li>
+                </ul>
+                <div class="security-badge">🔒 Secure & Confidential Engagement</div>
+            </div>
+            <form id="consultForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Corporate Email" required>
                 <select>
-                    <option>Policy Consultation Package</option>
+                    <option>Policy Consultation</option>
                     <option>Regulatory Consultation</option>
                     <option>Market Intelligence</option>
                 </select>
-                <textarea placeholder="Describe your specific needs..."></textarea>
-                <button type="submit">SEND SECURE INQUIRY</button>
+                <textarea placeholder="Describe your requirements..."></textarea>
+                <button type="submit" class="btn-gold-block">Request Consultation</button>
             </form>
-            <p class="privacy-note">🔒 Encrypted & Confidential. Responding within 24 hours.</p>
         </div>
     </section>
 
     <footer>
         <div class="container footer-grid">
-            <div class="f-info">
-                <img src="logo.png" alt="Logo" class="footer-logo">
-                <p>Strategic advisors to the Aerospace and Defense industry.</p>
+            <div class="f-about">
+                <h3>SUGOSHA</h3>
+                <p>Armed Forces Advisory. All rights reserved.</p>
             </div>
             <div class="f-contact">
-                <p>📍 New Delhi, India</p>
-                <p>📧 info@sugosha.com</p>
-                <p>📞 +91 98868 12348</p>
+                <p>Email: info@sugosha.com</p>
+                <p>Phone: +91 98868 12348</p>
+                <p>New Delhi, India</p>
             </div>
         </div>
-        <div class="bottom">© 2024 Sugosha Advisory. All rights reserved.</div>
     </footer>
 
     <script src="script.js"></script>
