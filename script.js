@@ -1,13 +1,13 @@
-// OFFSET CALCULATOR LOGIC
+// STRATEGIC OFFSET CALCULATOR
 function runOffsetCalc() {
-    const input = document.getElementById('contractVal').value;
-    const output = document.getElementById('offsetOutput');
-    if (input > 0) {
-        const result = input * 0.30; // 30% Obligation logic
-        output.innerText = `$${result.toFixed(2)} M`;
-        output.style.color = "#FFD700"; // Glow Gold
+    const val = document.getElementById('contractVal').value;
+    const res = document.getElementById('offsetResult');
+    if(val > 0) {
+        const calculation = val * 0.30; // 30% Obligation
+        res.innerText = `$${calculation.toFixed(2)} M`;
+        res.style.color = "#D4AF37";
     } else {
-        output.innerText = "$0.00 M";
+        res.innerText = "$0.00 M";
     }
 }
 
@@ -21,17 +21,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// FORM ENCRYPTION FEEDBACK
-const contactForm = document.querySelector('.contact-form');
-if(contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+// SECURE FORM FEEDBACK
+const form = document.querySelector('.contact-form');
+if(form) {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = e.target.querySelector('button');
         btn.innerText = "TRANSMITTING SECURELY...";
         setTimeout(() => {
-            alert("UPLINK SUCCESSFUL: Your strategic inquiry has been received. Our leadership board will respond within 24 hours.");
-            btn.innerText = "BOOK CONSULTATION";
-            contactForm.reset();
+            alert("SECURE UPLINK ESTABLISHED: Your strategic inquiry has been received by our leadership team. We will respond within 24 hours.");
+            btn.innerText = "SUBMIT INQUIRY";
+            form.reset();
         }, 1500);
     });
 }
