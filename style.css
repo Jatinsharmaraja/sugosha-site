@@ -1,43 +1,38 @@
-/* ELITE RADIANT THEME */
+/* ELITE RADIANT COMMAND THEME */
 :root {
     --electric-blue: #3A86FF;
-    --obsidian: #050A18;
-    --navy-light: #0D1629;
+    --obsidian: #050810;
+    --command-navy: #0B1221;
     --gold-bright: #FFD700;
     --silver: #E2E8F0;
-    --white: #FFFFFF;
     --glass: rgba(255, 255, 255, 0.04);
     --border: rgba(255, 255, 255, 0.1);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Inter', sans-serif; background: var(--obsidian); color: var(--silver); line-height: 1.6; overflow-x: hidden; }
-h1, h2, h3, .hero-badge { font-family: 'Cinzel', serif; letter-spacing: 1px; }
+h1, h2, h3, .hero-badge, .authority-text { font-family: 'Cinzel', serif; letter-spacing: 1px; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
 
-/* TACTICAL BACKGROUND */
-.tactical-grid { position: fixed; inset: 0; background-image: radial-gradient(var(--border) 1px, transparent 1px); background-size: 50px 50px; z-index: -1; }
-.light-beam { position: fixed; width: 600px; height: 600px; background: radial-gradient(circle, rgba(58, 134, 255, 0.15) 0%, transparent 70%); pointer-events: none; z-index: -1; top: -10%; left: 30%; }
-
-/* TICKER */
-.intel-ticker { background: var(--electric-blue); color: #fff; padding: 10px 0; font-size: 11px; font-weight: 800; border-bottom: 1px solid var(--border); }
-.ticker-scroll { overflow: hidden; white-space: nowrap; flex: 1; }
-.ticker-move { display: inline-block; animation: ticker 45s linear infinite; }
-@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+/* 1. TOP TAGLINE BAR */
+.top-authority-bar { background: var(--electric-blue); color: #fff; padding: 15px 0; text-align: center; border-bottom: 2px solid var(--gold-bright); }
+.authority-text { font-size: 16px; font-weight: 800; text-transform: uppercase; }
+.authority-sub { font-family: 'Inter'; font-size: 12px; margin-top: 5px; opacity: 0.9; font-weight: 600; }
 
 /* NAVBAR */
-.elite-nav { padding: 25px 0; background: rgba(5, 10, 24, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+.premium-nav { padding: 25px 0; background: rgba(5, 8, 16, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
 .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
 .brand-logo { height: 60px; filter: drop-shadow(0 0 10px var(--electric-blue)); }
 .nav-links { display: flex; list-style: none; }
 .nav-links a { color: #fff; text-decoration: none; margin-left: 35px; font-size: 13px; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
 .nav-links a:hover { color: var(--electric-blue); }
-.vault-access a { border: 1px solid var(--electric-blue); padding: 8px 18px; color: var(--electric-blue) !important; border-radius: 2px; }
+.client-access a { border: 1px solid var(--electric-blue); padding: 8px 18px; color: var(--electric-blue) !important; border-radius: 2px; }
 
 /* HERO */
-.hero { height: 90vh; display: flex; align-items: center; position: relative; }
-.hero-grid { display: grid; grid-template-cols: 1.2fr 0.8fr; gap: 60px; align-items: center; }
+.hero { height: 90vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero-light-beams { position: absolute; width: 800px; height: 800px; background: radial-gradient(circle, rgba(58, 134, 255, 0.15) 0%, transparent 70%); top: -10%; left: 30%; z-index: -1; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
 h1 { font-size: 4.5rem; line-height: 1; margin: 25px 0; color: #fff; }
 .electric-blue { color: var(--electric-blue); text-shadow: 0 0 30px rgba(58, 134, 255, 0.6); }
 .hero-badge { color: var(--gold-bright); border: 1px solid var(--gold-bright); padding: 5px 15px; font-size: 12px; font-weight: 900; }
@@ -46,36 +41,41 @@ h1 { font-size: 4.5rem; line-height: 1; margin: 25px 0; color: #fff; }
 .btn-radiant:hover { background: #fff; color: var(--electric-blue); box-shadow: 0 0 30px var(--electric-blue); }
 .btn-outline { border: 1px solid #fff; color: #fff; background: transparent; padding: 20px 45px; margin-left: 15px; font-weight: bold; cursor: pointer; }
 
-/* GLASS MODULES (Rectangular Base) */
-.glass-module { background: var(--glass); padding: 45px; border: 1px solid var(--border); backdrop-filter: blur(15px); border-radius: 4px; transition: 0.4s; position: relative; overflow: hidden; }
-.glass-module:hover { border-color: var(--electric-blue); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
+/* IMAGE CONTAINERS */
+.hero-image-box { position: relative; }
+.floating-img-drone { width: 100%; animation: float 6s ease-in-out infinite; filter: drop-shadow(0 0 20px rgba(58, 134, 255, 0.3)); }
+.atmanirbhar-logo { position: absolute; bottom: -20px; right: 0; width: 150px; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 4px; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 
-/* BENTO IDENTITY */
-.bento-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 25px; padding: 100px 0; }
-.rect-defense-img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; filter: brightness(0.8) contrast(1.2); border: 1px solid var(--border); }
+/* MODULES */
+.glass-module { background: var(--glass); padding: 45px; border: 1px solid var(--border); backdrop-filter: blur(15px); border-radius: 4px; transition: 0.4s; position: relative; }
+.glass-module:hover { border-color: var(--electric-blue); transform: translateY(-5px); }
+
+/* BENTO GRID */
+.bento-grid-identity { display: grid; grid-template-columns: 1.5fr 1fr; gap: 25px; padding: 100px 0; }
+.rect-defense-img { width: 100%; height: 100%; object-fit: cover; border: 1px solid var(--border); }
 .visual-card-rect { position: relative; overflow: hidden; }
 
-/* OFFSET CALCULATOR INFORMATICS */
-.intel-bento { display: grid; grid-template-cols: 1fr 1fr; gap: 25px; margin-top: 50px; }
+/* INFORMATICS (Calculator) */
+.intel-grid-bento { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 50px; }
 .calc-box input { width: 100%; padding: 20px; background: rgba(0,0,0,0.5); border: 1px solid var(--border); color: #fff; font-size: 24px; margin: 20px 0; }
 .calc-result strong { font-size: 3rem; color: var(--gold-bright); display: block; margin-top: 10px; }
-.multiplier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 30px; }
+.m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 30px; }
 .m-item { background: rgba(255,255,255,0.03); padding: 15px; text-align: center; border: 1px solid var(--border); }
 .m-item span { font-size: 10px; color: var(--electric-blue); font-weight: bold; display: block; }
 .m-item strong { font-size: 22px; color: #fff; }
 
 /* PILLARS GRID */
-.pillars-grid { display: grid; grid-template-cols: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding-top: 50px; }
-.active-pillar { border-top: 5px solid var(--gold-bright); background: rgba(255,215,0,0.02); }
-.pillar-light { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(58, 134, 255, 0.05) 0%, transparent 100%); }
+.pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding-top: 50px; }
+.featured-glow { border-top: 5px solid var(--gold-bright); }
 .icon { font-size: 40px; margin-bottom: 20px; }
 .p-list { list-style: none; margin-top: 20px; font-size: 13px; color: #94a3b8; }
 
-/* PUB HUB */
-.pub-grid, .team-grid { display: grid; grid-template-cols: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px; }
+/* PUB GRID */
+.pub-grid, .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px; }
 .price { font-size: 2.5rem; color: var(--electric-blue); font-weight: 900; margin: 20px 0; }
-.gold-glow { border: 1px solid var(--gold-bright); box-shadow: 0 0 20px rgba(255,215,0,0.1); }
+.gold-border { border: 1px solid var(--gold-bright); }
 
 /* FOOTER */
 footer { padding: 80px 0 20px; border-top: 1px solid var(--border); }
-.f-logo { height: 50px; margin-bottom: 20px; }
+.f-logo { height: 55px; margin-bottom: 20px; }
