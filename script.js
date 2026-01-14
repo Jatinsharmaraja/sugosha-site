@@ -1,47 +1,33 @@
-// ADVANCED SUITE SLIDER LOGIC
-let currentSlide = 0;
-const slider = document.getElementById('slider');
-const totalSlides = 10; // Total strategic cards
-const visibleSlides = 3;
-
-function slideNext() {
-    if (currentSlide < totalSlides - visibleSlides) {
-        currentSlide++;
-    } else {
-        currentSlide = 0;
-    }
-    updateSlider();
+// ADVANCED SUITE SLIDER
+let slideIdx = 0;
+function slideSuite(dir) {
+    const track = document.getElementById('suite-slider');
+    const cardWidth = document.querySelector('.suite-card').clientWidth + 24;
+    slideIdx += dir;
+    if(slideIdx < 0) slideIdx = 7;
+    if(slideIdx > 7) slideIdx = 0;
+    track.style.transform = `translateX(-${slideIdx * cardWidth}px)`;
 }
 
-function slidePrev() {
-    if (currentSlide > 0) {
-        currentSlide--;
+// OFFSET CALC
+function calculateOffset() {
+    const val = document.getElementById('calcInput').value;
+    const out = document.getElementById('calcOutput');
+    if(val > 0) {
+        out.innerText = `$${(val * 0.30).toFixed(2)} M`;
     } else {
-        currentSlide = totalSlides - visibleSlides;
-    }
-    updateSlider();
-}
-
-function updateSlider() {
-    const width = document.querySelector('.glass-slide').clientWidth + 20;
-    slider.style.transform = `translateX(-${currentSlide * width}px)`;
-}
-
-// OFFSET CALCULATOR
-function runOffsetCalc() {
-    const input = document.getElementById('contractVal').value;
-    const output = document.getElementById('offsetResult');
-    if(input > 0) {
-        const res = input * 0.30;
-        output.innerText = `$${res.toFixed(2)} M`;
-    } else {
-        output.innerText = "$0.00 M";
+        out.innerText = "$0.00 M";
     }
 }
 
-// FORM ENCRYPTION FEEDBACK
-document.querySelector('.contact-form').addEventListener('submit', (e) => {
+// FORM UPLINK FEEDBACK
+document.querySelector('.terminal-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    alert("SECURE UPLINK ESTABLISHED. Your inquiry is being reviewed by our strategic leadership board.");
-    e.target.reset();
+    const btn = e.target.querySelector('button');
+    btn.innerText = "TRANSMITTING DATA...";
+    setTimeout(() => {
+        alert("SECURE CONNECTION ESTABLISHED. Your strategic mission brief has been received. Our leadership will respond within 24 hours.");
+        btn.innerText = "ESTABLISH CONNECTION";
+        e.target.reset();
+    }, 1500);
 });
