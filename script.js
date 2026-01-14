@@ -1,26 +1,29 @@
-document.addEventListener('mousemove', (e) => {
-    const radar = document.querySelector('.radar-bg');
-    if(radar) {
-        const x = (window.innerWidth - e.pageX * 2) / 100;
-        const y = (window.innerHeight - e.pageY * 2) / 100;
-        radar.style.transform = `translate(${x}px, ${y}px) translateY(-50%)`;
-    }
-});
+// INTERACTIVE ROADMAP LOGIC
+const steps = document.querySelectorAll('.map-step');
+const display = document.getElementById('lifecycle-display');
 
-// Intersection Observer for Orbs falling into place
-const observerOptions = { threshold: 0.2 };
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
+steps.forEach(step => {
+    step.addEventListener('click', () => {
+        // Reset classes
+        steps.forEach(s => s.classList.remove('active'));
+        step.classList.add('active');
+        
+        // Update Content
+        const content = step.getAttribute('data-content');
+        display.style.opacity = 0;
+        setTimeout(() => {
+            display.innerText = content;
+            display.style.opacity = 1;
+        }, 200);
     });
-}, observerOptions);
-
-document.querySelectorAll('.service-orb-item').forEach(orb => {
-    orb.style.opacity = "0";
-    orb.style.transform = "translateY(50px)";
-    orb.style.transition = "all 0.8s ease-out";
-    observer.observe(orb);
 });
+
+// FORM SUBMISSION FEEDBACK
+const contactForm = document.querySelector('.glass-form');
+if(contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert("Strategic Inquiry Logged. A Sugosha Specialist will contact you under NDA protocol within 24 hours.");
+        contactForm.reset();
+    });
+}
