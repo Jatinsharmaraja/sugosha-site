@@ -1,22 +1,39 @@
-// Interactive Timeline
-const steps = document.querySelectorAll('.step');
-const detailBox = document.getElementById('lifecycle-detail');
+// INTERACTIVE DAP NAVIGATOR
+const nodes = document.querySelectorAll('.node');
+const display = document.getElementById('navigator-display');
 
-steps.forEach(step => {
-    step.addEventListener('click', () => {
-        // Change text based on step info
-        const info = step.getAttribute('data-info');
-        detailBox.innerHTML = `<h3 style="color:#2B549E; margin-bottom:10px;">Strategic Analysis</h3><p>${info}</p>`;
+nodes.forEach(node => {
+    node.addEventListener('click', () => {
+        // Reset active state
+        nodes.forEach(n => n.classList.remove('active'));
+        node.classList.add('active');
         
-        // Visual Highlight
-        steps.forEach(s => s.style.backgroundColor = 'transparent');
-        step.style.backgroundColor = '#2B549E';
+        // Change text content
+        const info = node.getAttribute('data-info');
+        display.style.opacity = 0;
+        setTimeout(() => {
+            display.innerText = info;
+            display.style.opacity = 1;
+        }, 200);
     });
 });
 
-// Form Smooth Reset
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert("Inquiry Sent Securely. Our analysts will contact you shortly.");
-    e.target.reset();
+// CONSULTATION FORM FEEDBACK
+const form = document.getElementById('consultForm');
+if(form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert("Strategic Inquiry Received. A Sugosha advisor will reach out within 24 hours under our NDA protocol.");
+        form.reset();
+    });
+}
+
+// SMOOTH SCROLLING
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
