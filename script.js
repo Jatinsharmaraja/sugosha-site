@@ -1,15 +1,16 @@
-// INTERACTIVE DAP NAVIGATOR
-const nodes = document.querySelectorAll('.node');
-const display = document.getElementById('navigator-display');
+// INTERACTIVE ROADMAP LOGIC
+const roadBoxes = document.querySelectorAll('.road-box');
+const display = document.getElementById('roadmap-display');
 
-nodes.forEach(node => {
-    node.addEventListener('click', () => {
-        // Reset active state
-        nodes.forEach(n => n.classList.remove('active'));
-        node.classList.add('active');
+roadBoxes.forEach(box => {
+    box.addEventListener('click', () => {
+        // Remove active class from all
+        roadBoxes.forEach(b => b.classList.remove('active'));
+        // Add to clicked
+        box.classList.add('active');
         
-        // Change text content
-        const info = node.getAttribute('data-info');
+        // Update the display text
+        const info = box.getAttribute('data-info');
         display.style.opacity = 0;
         setTimeout(() => {
             display.innerText = info;
@@ -18,22 +19,12 @@ nodes.forEach(node => {
     });
 });
 
-// CONSULTATION FORM FEEDBACK
-const form = document.getElementById('consultForm');
-if(form) {
-    form.addEventListener('submit', (e) => {
+// FORM FEEDBACK
+const contactForm = document.querySelector('.glass-form');
+if(contactForm) {
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert("Strategic Inquiry Received. A Sugosha advisor will reach out within 24 hours under our NDA protocol.");
-        form.reset();
+        alert("Encrypted Inquiry Sent. Our Strategic Lead will contact you within 24 hours.");
+        contactForm.reset();
     });
 }
-
-// SMOOTH SCROLLING
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
