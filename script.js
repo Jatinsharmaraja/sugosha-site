@@ -1,106 +1,104 @@
 /* ==========================================================================
-   SUGOSHA COMMAND LOGIC v10.0
+   SUGOSHA COMMAND LOGIC v11.0
    Author: AI Sovereign Engineer
-   Features: Offset Calculation, Slider Control, Terminal Reveal, HUD Effects
+   Logic: 10-Card Slider, Offset Engine, Mouse-Tracking, Form Encryption
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. STRATEGIC OFFSET ENGINE
-    const offsetInput = document.getElementById('contract-val');
-    const offsetDisplay = document.getElementById('offset-result');
 
-    window.runOffsetEngine = () => {
-        const value = parseFloat(offsetInput.value);
+    // 1. OFFSET ENGINE: REAL-TIME CALCULATION
+    const calcInput = document.getElementById('offset-in');
+    const calcOutput = document.getElementById('offset-out');
+
+    window.runOffsetLogic = () => {
+        const value = parseFloat(calcInput.value);
         if (!isNaN(value) && value > 0) {
-            const obligation = value * 0.30; // DAP 2020 Standard 30%
-            
-            // Format to USD Currency style with M suffix
-            offsetDisplay.innerText = `$ ${obligation.toLocaleString(undefined, {
+            const obligation = value * 0.30; // 30% Obligation Base
+            calcOutput.innerText = `$ ${obligation.toLocaleString(undefined, {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
             })} M`;
-            
-            // Add strategic alert color
-            offsetDisplay.style.color = "#FFD700";
+            calcOutput.style.color = "#FFD700"; // Radiant Gold
         } else {
-            offsetDisplay.innerText = "$ 0000.00 M";
-            offsetDisplay.style.color = "rgba(255,255,255,0.2)";
+            calcOutput.innerText = "$ 000.00 M";
+            calcOutput.style.color = "rgba(255,255,255,0.3)";
         }
     };
 
-    // 2. ADVANCED SUITE SLIDER CONTROLLER
-    let suiteIndex = 0;
+    // 2. STRATEGIC SLIDER: 10 CARDS (3 VIEW)
+    let sliderPos = 0;
     const track = document.getElementById('strategic-track');
-    const indicator = document.getElementById('slide-ind');
-    const totalSlides = 10;
-    const viewSize = 3;
+    const indicator = document.getElementById('slide-num');
+    const totalCards = 10;
+    const cardsPerView = 3;
 
     window.moveSuite = (direction) => {
-        suiteIndex += direction;
-        
-        // Loop back logic
-        if (suiteIndex < 0) suiteIndex = totalSlides - viewSize;
-        if (suiteIndex > totalSlides - viewSize) suiteIndex = 0;
-        
+        sliderPos += direction;
+
+        // Loop Logic
+        if (sliderPos < 0) sliderPos = totalCards - cardsPerView;
+        if (sliderPos > totalCards - cardsPerView) sliderPos = 0;
+
         const cardWidth = document.querySelector('.glass-solution-card').offsetWidth + 30;
-        track.style.transform = `translateX(-${suiteIndex * cardWidth}px)`;
-        
-        // Update display counter
-        indicator.innerText = `${String(suiteIndex + 1).padStart(2, '0')} / ${String(totalSlides - viewSize + 1).padStart(2, '0')}`;
+        track.style.transform = `translateX(-${sliderPos * cardWidth}px)`;
+
+        // Update Counter
+        const currentCount = String(sliderPos + 1).padStart(2, '0');
+        const maxCount = String(totalCards - cardsPerView + 1).padStart(2, '0');
+        indicator.innerText = `${currentCount} / ${maxCount}`;
     };
 
-    // 3. SCROLL REVEAL & HUD PARALLAX
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const flare = document.getElementById('master-glow-flare');
+    // 3. RADIANT LIGHTING: MOUSE TRACKING
+    document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
         
-        // Move background flare based on scroll
-        flare.style.transform = `translateY(${scrolled * 0.3}px)`;
+        // Update Tactical Grid Glow
+        const grid = document.querySelector('.tactical-hud-lines');
+        grid.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(212, 175, 55, 0.1) 0%, transparent 40%)`;
         
-        // Fade in navbar shadow
-        const nav = document.getElementById('main-nav');
-        if (scrolled > 50) {
-            nav.style.boxShadow = "0 10px 40px rgba(0,0,0,0.1)";
-            nav.style.padding = "12px 0";
-        } else {
-            nav.style.boxShadow = "none";
-            nav.style.padding = "20px 0";
-        }
+        // Move Radiant Flare
+        const flare = document.querySelector('.master-radiant-glow');
+        flare.style.transform = `translate(${(x - 50) * 0.2}px, ${(y - 50) * 0.2}px)`;
     });
 
-    // 4. MISSION FORM TERMINAL LOGIC
-    const missionForm = document.getElementById('mission-form');
+    // 4. SECURE FORM SIMULATION
+    const missionForm = document.getElementById('secure-form');
     if (missionForm) {
         missionForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const submitBtn = missionForm.querySelector('button');
-            
-            // Simulate Encrypted Transmission
-            submitBtn.innerText = "TRANSMITTING_ENCRYPTED_PACKETS...";
-            submitBtn.disabled = true;
-            submitBtn.style.opacity = "0.5";
-            
+            const btn = missionForm.querySelector('button');
+            const originalText = btn.innerText;
+
+            btn.innerText = "TRANSMITTING_ENCRYPTED_SIGNALS...";
+            btn.disabled = true;
+
             setTimeout(() => {
-                alert("SECURE STRATEGIC UPLINK ESTABLISHED. Your inquiry has been received by the Sugosha Command Board. A response will be issued within 24 hours.");
-                submitBtn.innerText = "CONNECTION_STABLE";
+                alert("STRATEGIC CONNECTION SUCCESSFUL: Your briefing request has been securely received by the Board of Advisors. Expect a secure response within 24 hours.");
+                btn.innerText = originalText;
+                btn.disabled = false;
                 missionForm.reset();
-                setTimeout(() => {
-                    submitBtn.innerText = "ESTABLISH CONNECTION";
-                    submitBtn.disabled = false;
-                    submitBtn.style.opacity = "1";
-                }, 3000);
-            }, 2500);
+            }, 2000);
         });
     }
 
-    // 5. TACTICAL MOUSE GLOW (Radar Ping)
-    document.addEventListener('mousemove', (e) => {
-        const grid = document.querySelector('.tactical-hud-grid');
-        const x = (e.clientX / window.innerWidth) * 100;
-        const y = (e.clientY / window.innerHeight) * 100;
-        grid.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(212, 175, 55, 0.1) 0%, transparent 40%)`;
+    // 5. PARALLAX SCROLL FOR MODULES
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const drone = document.querySelector('.drone-model');
+        if (drone) {
+            drone.style.transform = `translateY(${scrolled * 0.05}px) rotate(${scrolled * 0.01}deg)`;
+        }
+        
+        const navbar = document.getElementById('navbar');
+        if (scrolled > 100) {
+            navbar.style.padding = "15px 0";
+            navbar.style.boxShadow = "0 10px 40px rgba(0, 48, 135, 0.1)";
+        } else {
+            navbar.style.padding = "25px 0";
+            navbar.style.boxShadow = "none";
+        }
     });
 
-    console.log("SUGOSHA_SYSTEM_CORE: ONLINE_AND_OPERATIONAL");
+    console.log("SUGOSHA_OPERATIONAL_SYSTEM: V11_STABLE");
 });
