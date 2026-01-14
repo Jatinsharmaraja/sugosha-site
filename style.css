@@ -1,31 +1,153 @@
-// INTERACTIVE ROADMAP LOGIC
-const roadBoxes = document.querySelectorAll('.road-box');
-const display = document.getElementById('roadmap-display');
-
-roadBoxes.forEach(box => {
-    box.addEventListener('click', () => {
-        // Remove active class from all
-        roadBoxes.forEach(b => b.classList.remove('active'));
-        // Add to clicked
-        box.classList.add('active');
-        
-        // Update the display text
-        const info = box.getAttribute('data-info');
-        display.style.opacity = 0;
-        setTimeout(() => {
-            display.innerText = info;
-            display.style.opacity = 1;
-        }, 200);
-    });
-});
-
-// FORM FEEDBACK
-const contactForm = document.querySelector('.glass-form');
-if(contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert("Encrypted Inquiry Sent. Our Strategic Lead will contact you within 24 hours.");
-        contactForm.reset();
-    });
+/* PREMIUM SERVICES SECTION */
+.premium-services {
+    position: relative;
+    padding: 120px 0;
+    background-color: #0B1B2B; /* Deep Navy Defense Blue */
+    overflow: hidden;
+    color: #ffffff;
 }
 
+/* RADAR BACKGROUND EFFECT */
+.radar-bg {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 600px;
+    height: 600px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+.radar-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid #3A86FF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle-1 { width: 100%; height: 100%; }
+.circle-2 { width: 70%; height: 70%; }
+.circle-3 { width: 40%; height: 40%; }
+
+.crosshair-v { position: absolute; left: 50%; width: 1px; height: 100%; background: #3A86FF; }
+.crosshair-h { position: absolute; top: 50%; width: 100%; height: 1px; background: #3A86FF; }
+
+/* HEADER */
+.service-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    color: #3A86FF;
+    font-weight: 800;
+    letter-spacing: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.title-underline {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(to right, transparent, #3A86FF, transparent);
+    margin: 0 auto;
+}
+
+/* ORB GRID */
+.services-orb-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.service-orb-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+}
+
+.orb-glass {
+    background: radial-gradient(circle at top, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.4) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%; /* Pure Circle */
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.orb-glass:hover {
+    transform: translateY(-15px) scale(1.05);
+    border-color: #3A86FF;
+    box-shadow: 0 0 40px rgba(58, 134, 255, 0.3);
+}
+
+.highlight-orb {
+    border-color: rgba(58, 134, 255, 0.5);
+}
+
+/* ICONS */
+.orb-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px #3A86FF);
+    transition: 0.3s;
+}
+
+.orb-glass:hover .orb-icon {
+    transform: rotateY(180deg);
+}
+
+.orb-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* TEXT INSIDE ORB */
+.orb-glass h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.orb-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.orb-list li {
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.orb-glass:hover .orb-list li {
+    color: #ffffff;
+}
