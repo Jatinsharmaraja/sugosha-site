@@ -84,3 +84,36 @@ function revealElements() {
 
 window.addEventListener('scroll', revealElements);
 window.addEventListener('load', revealElements);
+// --- ENHANCEMENT: PILLAR INTERACTIVITY ---
+// Allows users to click on a glassy pillar to highlight it (Active State)
+document.querySelectorAll('.pillar-box').forEach(box => {
+    box.addEventListener('click', function() {
+        // Remove active class from all others
+        document.querySelectorAll('.pillar-box').forEach(b => b.classList.remove('active-pillar'));
+        // Add to the clicked one
+        this.classList.add('active-pillar');
+    });
+});
+
+// --- ENHANCEMENT: CALCULATOR POLISH ---
+// Makes the result "glow" briefly when the value changes
+const calcInput = document.getElementById('contractVal');
+const calcResult = document.getElementById('offsetResult');
+
+if(calcInput) {
+    calcInput.addEventListener('input', () => {
+        calcResult.style.textShadow = "0 0 20px rgba(255, 215, 0, 0.8)";
+        setTimeout(() => {
+            calcResult.style.textShadow = "none";
+        }, 500);
+    });
+}
+
+// --- ENHANCEMENT: SMOOTH REVEAL ADJUSTMENT ---
+// Ensures that images and glass cards fade in with a slight delay for a "staggered" look
+window.addEventListener('load', () => {
+    const cards = document.querySelectorAll('.pillar-box, .glass-slide');
+    cards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 0.1}s`;
+    });
+});
