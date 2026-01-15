@@ -430,4 +430,142 @@ footer { padding: 80px 0; background: var(--text); color: white; }
     transform: scale(1.01);
     transition: 0.3s;
 }
+/* --- PREMIUM HERO & LIVE BACKGROUND ENHANCEMENTS --- */
+
+.hero {
+    position: relative;
+    padding: 150px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #f8fafc; /* Professional fallback */
+}
+
+/* 1. Live Background Layering */
+.hero-live-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.12; /* Subtle, non-distracting */
+    filter: saturate(0.5) contrast(1.1);
+}
+
+.tech-grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 71, 171, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 71, 171, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1;
+    mask-image: radial-gradient(circle, black, transparent 90%);
+}
+
+/* 2. Premium Metallic Typography */
+.premium-heading {
+    font-size: 5rem !important;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.shimmer-text {
+    background: linear-gradient(90deg, var(--gold), #fff, var(--gold));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 4s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textShimmer {
+    to { background-position: 200% center; }
+}
+
+.premium-subtext {
+    font-size: 1.3rem !important;
+    color: var(--cobalt);
+    max-width: 750px;
+    margin: 0 auto 40px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* 3. Tactical HUD Elements */
+.hud-scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.2;
+    animation: hudScan 10s linear infinite;
+    z-index: 2;
+}
+
+@keyframes hudScan {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+.hud-crosshair {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s;
+    mix-blend-mode: difference;
+}
+
+/* 4. Button Coordinate Style */
+.btn-coord {
+    display: block;
+    font-size: 9px;
+    font-family: monospace;
+    opacity: 0.6;
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+/* 5. Tank Frame Polish */
+.tank-frame {
+    position: relative;
+    border: 10px solid #fff;
+    overflow: hidden;
+}
+
+.frame-glint {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: glint 5s infinite;
+}
+
+@keyframes glint {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+}
 
