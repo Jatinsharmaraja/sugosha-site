@@ -253,3 +253,27 @@ document.querySelectorAll('.glass-slide, .pillar-box, .pub-card-glass').forEach(
         card.style.transform = "scale(1)";
     });
 });
+// --- ENHANCEMENT: HUD & PARALLAX LOGIC ---
+const crosshair = document.querySelector('.hud-crosshair');
+
+document.addEventListener('mousemove', (e) => {
+    // 1. Move Tactical Crosshair
+    if(crosshair) {
+        crosshair.style.opacity = "1";
+        crosshair.style.left = e.clientX - 25 + 'px';
+        crosshair.style.top = e.clientY - 25 + 'px';
+    }
+    
+    // 2. Subtle Parallax for the Main Heading
+    const heroContent = document.querySelector('.hero-text');
+    if(heroContent) {
+        const x = (window.innerWidth / 2 - e.pageX) / 60;
+        const y = (window.innerHeight / 2 - e.pageY) / 60;
+        heroContent.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    }
+});
+
+// Hide crosshair when leaving hero
+document.querySelector('.hero').addEventListener('mouseleave', () => {
+    if(crosshair) crosshair.style.opacity = "0";
+});
