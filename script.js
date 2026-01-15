@@ -1,42 +1,30 @@
-// ADVANCED SUITE SLIDER LOGIC
+// SLIDER LOGIC
 let currentSlide = 0;
 const slider = document.getElementById('slider');
-const totalSlides = 10; 
+const totalSlides = 10;
 
 function slideNext() {
     const screenWidth = window.innerWidth;
-    let visibleSlides = 3;
-    if(screenWidth < 768) visibleSlides = 1;
-    else if(screenWidth < 992) visibleSlides = 2;
-
-    if (currentSlide < totalSlides - visibleSlides) {
-        currentSlide++;
-    } else {
-        currentSlide = 0; // Return to start
-    }
+    let visibleSlides = screenWidth < 768 ? 1 : (screenWidth < 992 ? 2 : 3);
+    if (currentSlide < totalSlides - visibleSlides) currentSlide++;
+    else currentSlide = 0;
     updateSlider();
 }
 
 function slidePrev() {
     const screenWidth = window.innerWidth;
-    let visibleSlides = 3;
-    if(screenWidth < 768) visibleSlides = 1;
-    else if(screenWidth < 992) visibleSlides = 2;
-
-    if (currentSlide > 0) {
-        currentSlide--;
-    } else {
-        currentSlide = totalSlides - visibleSlides; // Jump to end
-    }
+    let visibleSlides = screenWidth < 768 ? 1 : (screenWidth < 992 ? 2 : 3);
+    if (currentSlide > 0) currentSlide--;
+    else currentSlide = totalSlides - visibleSlides;
     updateSlider();
 }
 
 function updateSlider() {
-    // Gap is 20px based on the CSS 'gap' property
-    const width = document.querySelector('.glass-slide').clientWidth + 20;
+    const slide = document.querySelector('.glass-slide');
+    if(!slide) return;
+    const width = slide.clientWidth + 20;
     slider.style.transform = `translateX(-${currentSlide * width}px)`;
 }
-
 window.addEventListener('resize', updateSlider);
 
 // OFFSET CALCULATOR
@@ -44,146 +32,73 @@ function runOffsetCalc() {
     const input = document.getElementById('contractVal').value;
     const output = document.getElementById('offsetResult');
     if(input > 0) {
-        const res = input * 0.30;
-        output.innerText = `$${res.toFixed(2)} M`;
+        output.innerText = `$${(input * 0.30).toFixed(2)} M`;
+        output.style.textShadow = "0 0 20px rgba(255, 215, 0, 0.8)";
+        setTimeout(() => output.style.textShadow = "none", 500);
     } else {
         output.innerText = "$0.00 M";
     }
 }
 
-// FORM SUBMISSION
-document.querySelector('.contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert("SECURE UPLINK ESTABLISHED. Your inquiry is being reviewed by our strategic leadership board.");
-    e.target.reset();
-});
-
-// --- ENHANCEMENT: SCROLL REVEAL & NAV LOGIC ---
-function revealElements() {
-    const reveals = document.querySelectorAll('.reveal');
-    const nav = document.querySelector('.glass-nav');
-    
-    // Nav Background Change
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-
-    // Fade-in sections on scroll
-    reveals.forEach(element => {
-        let windowHeight = window.innerHeight;
-        let revealTop = element.getBoundingClientRect().top;
-        let revealPoint = 100;
-
-        if (revealTop < windowHeight - revealPoint) {
-            element.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', revealElements);
-window.addEventListener('load', revealElements);
-// --- ENHANCEMENT: PILLAR INTERACTIVITY ---
-// Allows users to click on a glassy pillar to highlight it (Active State)
-document.querySelectorAll('.pillar-box').forEach(box => {
-    box.addEventListener('click', function() {
-        // Remove active class from all others
-        document.querySelectorAll('.pillar-box').forEach(b => b.classList.remove('active-pillar'));
-        // Add to the clicked one
-        this.classList.add('active-pillar');
-    });
-});
-
-// --- ENHANCEMENT: CALCULATOR POLISH ---
-// Makes the result "glow" briefly when the value changes
-const calcInput = document.getElementById('contractVal');
-const calcResult = document.getElementById('offsetResult');
-
-if(calcInput) {
-    calcInput.addEventListener('input', () => {
-        calcResult.style.textShadow = "0 0 20px rgba(255, 215, 0, 0.8)";
-        setTimeout(() => {
-            calcResult.style.textShadow = "none";
-        }, 500);
-    });
-}
-
-// --- ENHANCEMENT: SMOOTH REVEAL ADJUSTMENT ---
-// Ensures that images and glass cards fade in with a slight delay for a "staggered" look
-window.addEventListener('load', () => {
-    const cards = document.querySelectorAll('.pillar-box, .glass-slide');
-    cards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-    });
-});
-// --- ENHANCEMENT: PREMIUM BOOKING TABS LOGIC ---
+// BOOKING TABS LOGIC
 const planData = {
     "Policy Consultation": {
         title: "Policy Consultation Package",
-        desc: "Strategic guidance on defense acquisition policy and basic media support with comprehensive analysis.",
-        bullets: ["✓ Policy advisory on DAP 2020 and earlier DPPs", "✓ Guidance on DPM and revenue procurement", "✓ Consultation on offset discharge and banking"]
+        desc: "Strategic guidance on defense acquisition policy and comprehensive analysis.",
+        bullets: ["✓ Policy advisory on DAP 2020", "✓ Guidance on DPM procedures", "✓ Consultation on offset discharge"]
     },
     "Regulatory Consultation": {
         title: "Regulatory & Compliance Suite",
-        desc: "End-to-end support for licensing, export-import controls, and institutional regulatory frameworks.",
-        bullets: ["✓ Industrial Licensing & Ex/Im documentation", "✓ ITAR/EAR compliance and audit readiness", "✓ JV and Investment facilitation support"]
+        desc: "End-to-end support for licensing and institutional regulatory frameworks.",
+        bullets: ["✓ Industrial Licensing & Ex/Im docs", "✓ ITAR/EAR compliance readiness", "✓ JV facilitation support"]
     },
     "Market Intelligence": {
         title: "Market Intelligence & Research",
-        desc: "Deep-dive financial and technical analysis for OEMs and startups looking to enter the Indian defense market.",
-        bullets: ["✓ Capability gap analysis and forecasting", "✓ Competitor pricing benchmarks", "✓ iDEX/TDF proposal mentoring for startups"]
+        desc: "Deep-dive financial and technical analysis for the Indian defense market.",
+        bullets: ["✓ Capability gap analysis", "✓ Competitor pricing benchmarks", "✓ iDEX/TDF proposal mentoring"]
     }
 };
 
 const tabs = document.querySelectorAll('.plan-tab');
-const autoPlanInput = document.getElementById('autoPlan');
-const planTitle = document.getElementById('planTitle');
-const planDesc = document.getElementById('planDesc');
-const planBullets = document.getElementById('planBullets');
-
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-        // 1. Update Active UI
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-
-        // 2. Get Data
-        const selectedPlan = tab.getAttribute('data-plan');
-        const data = planData[selectedPlan];
-
-        // 3. Update Form (Automatic Feel)
-        autoPlanInput.value = selectedPlan;
-
-        // 4. Update Content with Smooth Transition
+        const plan = tab.getAttribute('data-plan');
+        document.getElementById('autoPlan').value = plan;
+        
         const contentBox = document.getElementById('planContent');
         contentBox.style.opacity = '0';
-        
         setTimeout(() => {
-            planTitle.innerText = data.title;
-            planDesc.innerText = data.desc;
-            planBullets.innerHTML = data.bullets.map(b => `<li>${b}</li>`).join('');
+            document.getElementById('planTitle').innerText = planData[plan].title;
+            document.getElementById('planDesc').innerText = planData[plan].desc;
+            document.getElementById('planBullets').innerHTML = planData[plan].bullets.map(b => `<li>${b}</li>`).join('');
             contentBox.style.opacity = '1';
         }, 200);
     });
 });
-// --- ENHANCEMENT: ELEGANT FLOAT INTERACTION ---
-// Removes heavy rotation and adds a smooth "Lift" effect
-document.querySelectorAll('.pub-card-glass').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        // We let CSS handle the main float, but we can add 
-        // a staggered reveal to the children for extra elegance
-        const elements = card.querySelectorAll('h4, p, .price, .btn-lightning');
-        elements.forEach((el, i) => {
-            el.style.transition = `all 0.4s ease ${i * 0.05}s`;
-            el.style.transform = `translateY(-5px)`;
-        });
-    });
 
-    card.addEventListener('mouseleave', () => {
-        const elements = card.querySelectorAll('h4, p, .price, .btn-lightning');
-        elements.forEach((el) => {
-            el.style.transform = `translateY(0)`;
-        });
+// SCROLL REVEAL
+function revealElements() {
+    const reveals = document.querySelectorAll('.reveal');
+    const nav = document.querySelector('.glass-nav');
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+
+    reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+    });
+}
+window.addEventListener('scroll', revealElements);
+window.addEventListener('load', () => {
+    revealElements();
+    document.querySelectorAll('.pillar-box, .glass-slide').forEach((c, i) => c.style.transitionDelay = `${i * 0.1}s`);
+});
+
+// PILLAR CLICK
+document.querySelectorAll('.pillar-box').forEach(box => {
+    box.addEventListener('click', function() {
+        document.querySelectorAll('.pillar-box').forEach(b => b.classList.remove('active-pillar'));
+        this.classList.add('active-pillar');
     });
 });
