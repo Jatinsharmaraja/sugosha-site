@@ -32,7 +32,22 @@ h1, h2, h3, .auth-main { font-family: 'Cinzel', serif; letter-spacing: 1px; colo
 /* 3. HERO */
 .hero { padding: 100px 0; min-height: 80vh; display: flex; align-items: center; position: relative; }
 .golden-light-flare { position: absolute; top: -10%; right: 10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%); z-index: -1; }
-.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; }
+.hero-grid { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; /* This centers the heading and text */
+}
+
+.hero-text {
+    max-width: 800px; /* Limits width for better readability when centered */
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center; /* Centers the button */
+    margin-top: 30px;
+}
 h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; }
 .gold-text { color: var(--gold); text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
 .hero-badge { background: var(--cobalt); color: white; padding: 5px 15px; font-size: 12px; font-weight: 800; display: inline-block; margin-bottom: 15px; }
@@ -121,3 +136,4 @@ footer { padding: 80px 0; background: var(--text); color: white; }
     .glass-slide { min-width: 100%; }
     .nav-links { display: none; } /* Add menu icon logic here if needed */
 }
+
