@@ -254,28 +254,72 @@
     </section>
 
     <!-- 10. CONTACT -->
-    <section id="contact" class="contact">
+    <!-- 10. PREMIUM BOOKING & CONSULTATION SECTION -->
+    <section id="contact" class="booking-section reveal">
         <div class="container">
-            <div class="contact-grid glass-card-rect reveal">
-                <div class="contact-info">
-                    <h2>Secure Consultation</h2>
-                    <p>Request an encrypted briefing with our senior leadership board.</p>
-                    <ul class="check-list" style="list-style: none; margin-top: 20px; color: var(--cobalt);">
-                        <li>✓ Policy advisory on DAP 2020</li>
-                        <li>✓ Tender process support</li>
-                        <li>✓ Offset discharge strategy</li>
-                    </ul>
+            <div class="center-title">
+                <span class="label">GET STARTED</span>
+                <h2 class="section-title">Book Your Consultation</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="booking-grid glass-card-rect">
+                <!-- LEFT SIDE: THE DYNAMIC FORM -->
+                <div class="booking-form-area">
+                    <form class="contact-form">
+                        <div class="input-group">
+                            <label>Full Name *</label>
+                            <input type="text" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Email Address *</label>
+                            <input type="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Selected Plan *</label>
+                            <!-- This field updates automatically when tabs are clicked -->
+                            <input type="text" id="autoPlan" value="Policy Consultation" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label>Additional Details</label>
+                            <textarea placeholder="Tell us about your specific needs, timeline, and any other relevant information..." rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn-gold-shine tactical-btn">INITIATE SECURE UPLINK</button>
+                    </form>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Corporate Email" required>
-                    <textarea placeholder="Describe your requirement..."></textarea>
-                    <button type="submit" class="btn-gold-shine">Initiate Secure Uplink</button>
-                </form>
+
+                <!-- RIGHT SIDE: PLAN SELECTOR & PACKAGE DETAILS -->
+                <div class="booking-details-area">
+                    <!-- High-End Tabs -->
+                    <div class="plan-tabs">
+                        <div class="plan-tab active" data-plan="Policy Consultation">
+                            <span>Policy<br>Consultation</span>
+                        </div>
+                        <div class="plan-tab" data-plan="Regulatory Consultation">
+                            <span>Regulatory<br>Consultation</span>
+                        </div>
+                        <div class="plan-tab" data-plan="Market Intelligence">
+                            <span>Market Intelligence<br>& Research</span>
+                        </div>
+                    </div>
+
+                    <!-- Package Content (Controlled by JS) -->
+                    <div class="plan-content-box" id="planContent">
+                        <h3 id="planTitle">Policy Consultation Package</h3>
+                        <p id="planDesc">Perfect for organizations needing strategic guidance and basic media support with comprehensive analysis.</p>
+                        
+                        <ul class="plan-bullets" id="planBullets">
+                            <li>✓ Policy advisory on DAP 2020 and earlier editions of DPP</li>
+                            <li>✓ Policy advisory on DPM and revenue procurement procedures</li>
+                            <li>✓ Consultation on offset discharge and banking of credits</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER SECTION -->
     <footer>
         <div class="container footer-flex">
             <div class="f-brand">
@@ -291,6 +335,7 @@
         <div class="copyright">&copy; 2024 Sugosha Advisory Services. All Rights Reserved.</div>
     </footer>
 
+    <!-- Scripts are linked at the end to ensure all HTML elements are loaded first -->
     <script src="script.js"></script>
 </body>
 </html>
