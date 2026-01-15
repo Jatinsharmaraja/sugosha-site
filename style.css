@@ -136,4 +136,41 @@ footer { padding: 80px 0; background: var(--text); color: white; }
     .glass-slide { min-width: 100%; }
     .nav-links { display: none; } /* Add menu icon logic here if needed */
 }
+/* ============================================================
+   ENHANCEMENT: PREMIUM GLASSY GRID FOR CORE PILLARS
+   ============================================================ */
+
+.pillar-box {
+    /* Upgrading to semi-transparent glass */
+    background: rgba(255, 255, 255, 0.4) !important; 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07); 
+    border-radius: 8px; 
+    transition: all 0.4s ease-in-out;
+}
+
+/* Ensure the folder icons scale correctly inside the glass cards */
+.p-icon img {
+    height: 70px; 
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 5px 15px rgba(0, 71, 171, 0.1)); 
+}
+
+/* Enhanced Hover Effect for interactivity */
+.pillar-box:hover {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-color: var(--gold) !important;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0, 71, 171, 0.15);
+}
+
+/* Maintain the gold accent line for the active pillar */
+.active-pillar {
+    border-bottom: 5px solid var(--gold) !important;
+}
+
 
