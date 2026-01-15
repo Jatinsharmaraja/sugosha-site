@@ -718,3 +718,114 @@ footer {
 @media (max-width: 768px) {
     .glass-slide { min-width: 100%; }
 }
+/* --- EXECUTIVE DOSSIER TEAM SECTION --- */
+.team-section { padding: 100px 0; background: var(--light-blue); }
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.dossier-card {
+    position: relative;
+    display: flex;
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid var(--border) !important;
+    padding: 0 !important; /* Managed by content padding */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: left !important;
+    overflow: hidden;
+}
+
+/* Tactical Vertical Sidebar */
+.dossier-sidebar {
+    width: 6px;
+    background: var(--cobalt);
+    transition: 0.4s;
+}
+
+.dossier-card:hover .dossier-sidebar {
+    width: 12px;
+    background: var(--gold);
+}
+
+.dossier-content {
+    padding: 40px 30px;
+    width: 100%;
+}
+
+.tactical-tag {
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--cobalt);
+    opacity: 0.6;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.dossier-card strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--cobalt);
+    margin-bottom: 5px;
+    font-family: var(--font-heading);
+}
+
+.role {
+    display: block;
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Animated Divider */
+.divider-gold {
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px 0;
+    transition: width 0.6s ease;
+}
+
+.dossier-card:hover .divider-gold {
+    width: 80px;
+}
+
+.dossier-card p {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Hover State */
+.dossier-card:hover {
+    background: #fff !important;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 71, 171, 0.08) !important;
+}
+
+/* Add a subtle "target" corner to cards */
+.dossier-card::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid var(--border);
+    border-right: 2px solid var(--border);
+    transition: 0.3s;
+}
+
+.dossier-card:hover::after {
+    border-color: var(--gold);
+    width: 20px;
+    height: 20px;
+}
+
