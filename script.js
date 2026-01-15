@@ -289,3 +289,23 @@ document.querySelectorAll('.glass-slide, .pillar-box, .pub-card-glass').forEach(
         card.style.transform = "scale(1)";
     });
 });
+
+// --- ENHANCEMENT: ADVISOR CARD PARALLAX ---
+document.querySelectorAll('.dossier-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Move the gold divider based on mouse position
+        const divider = card.querySelector('.divider-gold');
+        const moveX = (x / rect.width) * 20;
+        divider.style.transform = `translateX(${moveX}px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        const divider = card.querySelector('.divider-gold');
+        divider.style.transform = `translateX(0)`;
+    });
+});
+
