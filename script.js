@@ -167,3 +167,18 @@ tabs.forEach(tab => {
         }, 200);
     });
 });
+// --- ENHANCEMENT: MAGAZINE 3D INTERACTION ---
+document.querySelectorAll('.pub-card-glass').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+        let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+        card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateY(-10px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = `rotateY(0deg) rotateX(0deg) translateY(0px)`;
+        if(card.classList.contains('featured-card')) {
+            card.style.transform = `scale(1.05)`;
+        }
+    });
+});
