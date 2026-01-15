@@ -117,3 +117,53 @@ window.addEventListener('load', () => {
         card.style.transitionDelay = `${index * 0.1}s`;
     });
 });
+// --- ENHANCEMENT: PREMIUM BOOKING TABS LOGIC ---
+const planData = {
+    "Policy Consultation": {
+        title: "Policy Consultation Package",
+        desc: "Strategic guidance on defense acquisition policy and basic media support with comprehensive analysis.",
+        bullets: ["✓ Policy advisory on DAP 2020 and earlier DPPs", "✓ Guidance on DPM and revenue procurement", "✓ Consultation on offset discharge and banking"]
+    },
+    "Regulatory Consultation": {
+        title: "Regulatory & Compliance Suite",
+        desc: "End-to-end support for licensing, export-import controls, and institutional regulatory frameworks.",
+        bullets: ["✓ Industrial Licensing & Ex/Im documentation", "✓ ITAR/EAR compliance and audit readiness", "✓ JV and Investment facilitation support"]
+    },
+    "Market Intelligence": {
+        title: "Market Intelligence & Research",
+        desc: "Deep-dive financial and technical analysis for OEMs and startups looking to enter the Indian defense market.",
+        bullets: ["✓ Capability gap analysis and forecasting", "✓ Competitor pricing benchmarks", "✓ iDEX/TDF proposal mentoring for startups"]
+    }
+};
+
+const tabs = document.querySelectorAll('.plan-tab');
+const autoPlanInput = document.getElementById('autoPlan');
+const planTitle = document.getElementById('planTitle');
+const planDesc = document.getElementById('planDesc');
+const planBullets = document.getElementById('planBullets');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // 1. Update Active UI
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // 2. Get Data
+        const selectedPlan = tab.getAttribute('data-plan');
+        const data = planData[selectedPlan];
+
+        // 3. Update Form (Automatic Feel)
+        autoPlanInput.value = selectedPlan;
+
+        // 4. Update Content with Smooth Transition
+        const contentBox = document.getElementById('planContent');
+        contentBox.style.opacity = '0';
+        
+        setTimeout(() => {
+            planTitle.innerText = data.title;
+            planDesc.innerText = data.desc;
+            planBullets.innerHTML = data.bullets.map(b => `<li>${b}</li>`).join('');
+            contentBox.style.opacity = '1';
+        }, 200);
+    });
+});
