@@ -81,3 +81,23 @@ h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; }
 /* FOOTER */
 footer { padding: 80px 0; background: var(--text); color: white; }
 .footer-logo { height: 50px; margin-bottom: 20px; filter: brightness(0) invert(1); }
+
+/* --- ENHANCEMENT: SCROLL REVEAL ANIMATIONS --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ENHANCEMENT: DYNAMIC NAV SCROLL --- */
+.glass-nav.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 10px 40px rgba(0, 71, 171, 0.15);
+    padding: 12px 0; /* Shrinks nav slightly on scroll for a premium feel */
+}
+
